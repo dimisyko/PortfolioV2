@@ -1,9 +1,7 @@
 <template>
     <section>
-      <h1>Dimi</h1>
-       <figure class="image">
-              <nuxt-img src="/atomium-hero.webp" quality="90" sizes="sm:100vw md:100vw lg:100vw" />
-      </figure>
+      <h1>Front-end developpeur et web designer</h1>
+      <p>Test texte</p>
       <nuxt-link to="/works">Voir mes travaux</nuxt-link>
     </section>
 </template>
@@ -22,8 +20,7 @@ export default {
 <style lang="scss">
 section{
   h1{
-    color: red;
-    @include centerObs(50%, 50%, -50%, -50%)
+    font-size: 3rem;
   }
 }
 </style>

@@ -5,6 +5,9 @@
   user-select: none;
   outline: none;
 }
+body{
+  background-color: #F1F1F1;
+}
   html, body, nav, header, footer, div, span,
   h1, h2, h3, p,
   a, img,
@@ -35,3 +38,10 @@
     width: 100%;
     height: 100%;
   }
+h1, h2, h3{
+  color: #D06143;
+  font-family: 'OswaldTitle';
+}
+a, p{
+  font-family: 'PoppinsTxt';
+}

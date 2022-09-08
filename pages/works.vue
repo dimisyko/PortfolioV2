@@ -1,5 +1,7 @@
 <template>
+<main role="main">
   <h1>Page mes travaux</h1>
+  </main>
 </template>
 
 <script>
@@ -13,6 +15,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss"> 
 
 </style>

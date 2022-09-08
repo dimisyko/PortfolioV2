@@ -43,10 +43,8 @@ export default {
   ],
   styleResources: {
       scss: [
-        '~/assets/scss/base/_global.scss',
-        '~/assets/scss/base/_fonts.scss',
+        '~/assets/scss/base/*.scss',
         '~/assets/scss/abstracts/_mixins.scss',
-        '~/assets/scss/abstracts/_var.scss',
       ]
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
