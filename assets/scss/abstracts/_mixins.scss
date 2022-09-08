@@ -1,0 +1,19 @@
+@mixin centerObs($top, $left, $x, $y){
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate($x,$y);
+}
+@mixin after ($top, $left){
+    content: '';
+    position: absolute;
+    top: $top;
+    left: $left;
+    z-index: -1;
+}
+%centerFlex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
