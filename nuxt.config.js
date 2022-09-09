@@ -40,11 +40,12 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/scss/base/_fonts.scss',
+    '~/assets/scss/base/_global.scss'
   ],
   styleResources: {
       scss: [
-        '~/assets/scss/base/*.scss',
-        '~/assets/scss/abstracts/_mixins.scss',
+        '~/assets/scss/abstracts/_mixins.scss'
       ]
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

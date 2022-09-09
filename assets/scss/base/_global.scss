@@ -2,13 +2,12 @@
 *:before,
 *:after {
   box-sizing: border-box;
-  user-select: none;
   outline: none;
 }
 body{
   background-color: #F1F1F1;
 }
-  html, body, nav, header, footer, div, span,
+  html, body, nav, header, footer, span,
   h1, h2, h3, p,
   a, img,
   ul, li,
@@ -20,18 +19,13 @@ body{
   ul, li {
     list-style: none;
   }
-  input:focus,
-  textarea:focus,
-  button:focus {
-    outline: none;
-  }
   button:hover {
     cursor: pointer;
   }
   a {
     text-decoration: none;
   }
-  img, svg {
+  img, svg, span, a {
     display: block;
   }
   img, svg {
@@ -39,9 +33,16 @@ body{
     height: 100%;
   }
 h1, h2, h3{
-  color: #D06143;
+  color: #df603c;
   font-family: 'OswaldTitle';
 }
-a, p{
+p{
   font-family: 'PoppinsTxt';
+}
+.hide{
+  overflow: hidden;
+}
+.w-90{
+  width: 90%;
+  margin: auto;
 }

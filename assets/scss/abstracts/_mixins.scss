@@ -17,3 +17,26 @@
     align-items: center;
     height: 100%;
 }
+%flex_between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin phone {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+@mixin tablet {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @mixin laptop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
