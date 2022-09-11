@@ -1,7 +1,7 @@
 <template>
   <header class="menu">
-    <div class="menu__header">
-      <nuxt-link to="/">SD</nuxt-link>
+    <div class="menu__header w-90">
+      <nuxt-link to="/" class="menu__logo">Sykovaris Dimitrios</nuxt-link>
       <button
         type="button"
         aria-label="toggleMenu"
@@ -13,7 +13,7 @@
         </div>
       </button>
     </div>
-    <div class="menu__bg">
+    <div class="menu__bg w-90">
       <svg
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
@@ -24,7 +24,7 @@
       <nav class="menu__nav">
         <ul class="menu__wrapper">
           <li class="menu__list hide" v-for="(i, item) in nav" :key="item">
-            <nuxt-link class="menu__link" :to="i.url">{{ i.link }}</nuxt-link>
+            <nuxt-link :data-txt="i.link" class="menu__link" :to="i.url">{{ i.link }}</nuxt-link>
           </li>
         </ul>
       </nav>
@@ -49,7 +49,7 @@ export default {
         },
         {
           url: "/about",
-          link: "A propos",
+          link: "A\xa0\propos",
         },
       ],
       tlOpen: gsap.timeline({ paused: true }),
@@ -70,6 +70,9 @@ export default {
             duration: 0.4,
             ease: 'power2',
         })
+      this.tlOpen.to('.menu__bg',{
+          pointerEvents : "auto",
+      }, "sameTime")
        this.tlOpen.to(".menu__list",{
           duration: 0.8,
          opacity : 1
@@ -93,17 +96,23 @@ export default {
 .menu {
   position: fixed;
   top: 0;
-  width: 90%;
+  width: 100%;
   height: 0;
+  z-index: 3;
   &__header {
     padding: 2rem 0;
     @extend %flex_between;
+  }
+  &__logo{
+    font-family: "Poppins";
+    color: white;
+    font-size: 1.15rem;
   }
   &__burger {
     position: relative;
     height: 60px;
     width: 60px;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 50%;
     background-color: transparent;
         &.active{
@@ -126,7 +135,7 @@ export default {
         position: absolute;
         width: 100%;
         height: 2px;
-        background-color: black;
+        background-color: white;
         transition: 0.5s;
       }
       .lineBurger:nth-child(1) {
@@ -141,7 +150,8 @@ export default {
     }
   }
   &__bg {
-    height: 80vh;
+    height: 75vh;
+    pointer-events: none;
     .bg-transition {
       position: fixed;
       top: 0;
@@ -151,6 +161,7 @@ export default {
   }
   &__nav {
     @extend %centerFlex;
+    height: 100%;
   }
   &__wrapper {
     width: 100%;
@@ -160,7 +171,6 @@ export default {
     opacity: 0;
     border-top: 1.5px solid #f1f1f1;
     display: flex;
-    pointer-events: none;
     &:last-child {
       border-bottom: 1.5px solid #f1f1f1;
     }
@@ -171,13 +181,13 @@ export default {
       padding: 2.5rem 0;
     }
     @include laptop {
-      padding: 1vw 0;
+      padding: 2vw 0;
       &:first-child {
-        padding-left: 17vw;
+        padding-left: 12vw;
       }
       &:nth-child(2) {
         justify-content: flex-end;
-        padding-right: 17vw;
+        padding-right: 12vw;
       }
       &:nth-child(3) {
         justify-content: center;
@@ -185,10 +195,34 @@ export default {
     }
   }
   &__link {
+    position: relative;
     color: #f1f1f1;
     font-size: 2.5rem;
-    font-family: "OswaldTitle";
-    transform: translate(0, 150%);
+    font-family: "Neue";
+    text-transform: uppercase;
+    transform: translate(0, 170%);
+      color: transparent;
+      -webkit-text-stroke: 1px #f1f1f1;
+    &.nuxt-link-exact-active{
+        pointer-events: none;
+        &::after{
+          width: 0;
+        }
+    }
+     &::after{
+        content: attr(data-txt);
+        position: absolute;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        color: #f1f1f1;
+        transition: width 0.7s;
+      }
+        &:hover{
+          &::after{
+           width: 0%;
+          }
+        }
     @include phone {
       font-size: 3rem;
     }
@@ -196,8 +230,9 @@ export default {
       font-size: 4rem;
     }
     @include laptop {
-      font-size: 8vw;
-      transform: translate(0, 105%);
+      -webkit-text-stroke: 1.5px #f1f1f1;
+      font-size: 7vw;
+      transform: translate(0, 110%);
     }
   }
 }

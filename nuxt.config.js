@@ -14,7 +14,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: "Portfolio de Sykovaris Dimitrios" },
       { name: 'format-detection', content: 'telephone=no' },
-      { name: "msapplication-TileColor", content: "#2d89ef" },
+      { name: "msapplication-TileColor", content: "#da532c" },
       { name: "theme-color", content: "#ffffff" },
       { hid: 'og:url', property : "og:url", content : "https://bruvisite.netlify.app/" },
       { hid: 'og:type', property : "og:type", content : "website" },
@@ -37,7 +37,6 @@ export default {
       { rel: 'mask-icon', href: "/favicon/safari-pinned-tab.svg", color: "#5bbad5" },
     ],
   },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/scss/base/_fonts.scss',
@@ -62,7 +61,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    ['@nuxtjs/style-resources']
+    '@nuxtjs/style-resources'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

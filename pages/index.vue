@@ -1,12 +1,21 @@
 <template>
-  <div class="all w-90">
-    <Header/>
-    <section class="home">
-      <h1 class="home__title">
-        <span v-for="split in txt" :key="split" class="home__span">
-          {{ split }}
-        </span>
-      </h1>
+  <div>
+    <Header />
+    <section class="home w-90">
+      <div class="home__txt">
+        <h1 class="home__title">
+          <span v-for="split in txt" :key="split" class="home__span">
+            {{ split }}
+          </span>
+        </h1>
+        <nuxt-link class="link-projects" to="works"
+          ><span class="link"> Voir mes<br />projets </span>
+          <span class="home__btn"><svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M0.287109 13.3669V11.633C0.287109 11.1542 0.672433 10.7661 1.14775 10.7661H28.981L21.3212 3.06758C21.1583 2.90479 21.0667 2.6832 21.0667 2.45204C21.0667 2.22088 21.1583 1.99929 21.3212 1.83651L22.5434 0.622775C22.705 0.458651 22.9249 0.366333 23.1544 0.366333C23.3839 0.366333 23.6039 0.458651 23.7655 0.622775L34.3342 11.2516C34.5763 11.4952 34.7126 11.8258 34.7129 12.1706V12.8294C34.7089 13.1735 34.5732 13.5027 34.3342 13.7484L23.7655 24.3772C23.6039 24.5413 23.3839 24.6337 23.1544 24.6337C22.9249 24.6337 22.705 24.5413 22.5434 24.3772L21.3212 23.1461C21.1593 22.9863 21.0681 22.7676 21.0681 22.5393C21.0681 22.3109 21.1593 22.0922 21.3212 21.9324L28.981 14.2339H1.14775C0.672433 14.2339 0.287109 13.8457 0.287109 13.3669Z" fill="white"/></svg>
+          </span>
+        </nuxt-link
+        >
+      </div>
     </section>
   </div>
 </template>
@@ -16,12 +25,12 @@ export default {
   name: "Home",
   data() {
     return {
-      txt: ["Front-end", "developpeur", "/ web designer"],
+      txt: ["Front-end", "dev.", "/ web", "designer"],
     };
   },
   head() {
     return {
-      title: "Accueil",
+      title: "Sykovaris Dimitrios - Portfolio",
     };
   },
 };
@@ -30,32 +39,68 @@ export default {
 <style lang="scss">
 .home {
   height: 100vh;
+  @extend %centerFlex;
+  &__txt {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include laptop {
+      margin-top: 4vw;
+      height: 75vh;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+  }
   &__title {
-    letter-spacing: 4px;
     font-size: 3.2rem;
     text-align: center;
-    line-height: 1.2;
-    @extend %centerFlex;
+    line-height: 0.85;
+    display: flex;
     flex-direction: column;
     @include phone {
       font-size: 4.5rem;
     }
-    @include tablet {
-      font-size: 5.5rem;
-    }
     @include laptop {
-      font-size: 10vw;
-      letter-spacing: 10px;
+      font-size: 7.3vw;
+      text-align: left;
+      width: 54%;
+      align-self: flex-start;
     }
   }
   &__span {
-    @include laptop {
-      &:nth-child(1) {
-        align-self: flex-start;
+     &:nth-child(2) {
+        font-style: italic;
       }
+    @include laptop {
       &:nth-child(2) {
+        align-self: center;
+      }
+      &:nth-child(4) {
         align-self: flex-end;
       }
+    }
+  }
+  .link-projects {
+    color: white;
+    font-family: "Neue";
+    text-transform: uppercase;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    display: flex;
+    line-height: 1;
+    .home__btn{
+      width: 50px;
+      border: 1px solid white;
+      border-radius: 50vw;
+      height: 50px;
+      padding: 10px;
+      margin-left: 15px;
+      align-self: flex-end;
+    }
+    @include laptop {
+      align-self: flex-end;
+      font-size: 3vw;
     }
   }
 }

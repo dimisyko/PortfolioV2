@@ -5,7 +5,7 @@
   outline: none;
 }
 body{
-  background-color: #F1F1F1;
+  background-color: #B0B0B0;
 }
   html, body, nav, header, footer, span,
   h1, h2, h3, p,
@@ -31,16 +31,22 @@ body{
   img, svg {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 h1, h2, h3{
-  color: #df603c;
-  font-family: 'OswaldTitle';
+  color: white;
+  font-family: 'Neue';
+  font-weight: lighter;
+  text-transform: uppercase;
 }
 p{
-  font-family: 'PoppinsTxt';
+  font-family: 'Poppins';
 }
 .hide{
   overflow: hidden;
+}
+.overflow-x{
+  overflow-x: hidden;
 }
 .w-90{
   width: 90%;
