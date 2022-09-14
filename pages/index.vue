@@ -4,7 +4,7 @@
     <section class="home w-90">
       <div class="home__txt">
         <h1 class="home__title">
-          <span v-for="split in txt" :key="split" class="home__span">
+          <span v-for="split in txt" :key="split" class="home__split">
             {{ split }}
           </span>
         </h1>
@@ -53,22 +53,17 @@ export default {
     }
   }
   &__title {
-    font-size: 3.2rem;
     text-align: center;
     line-height: 0.85;
     display: flex;
     flex-direction: column;
-    @include phone {
-      font-size: 4.5rem;
-    }
     @include laptop {
-      font-size: 7.3vw;
       text-align: left;
       width: 54%;
       align-self: flex-start;
     }
   }
-  &__span {
+  &__split {
      &:nth-child(2) {
         font-style: italic;
       }

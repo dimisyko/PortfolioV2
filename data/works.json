@@ -1,10 +1,47 @@
-[
+{
+  "projectsPage": [
     {
-        "titleProject" : "Bruvisite",
-        "imgProject" : "/works/grandPlace-visit.webp"
+      "titleProject": "Bruvisite",
+      "imgProject": "/works/grandPlace-visit.webp",
+      "url": "bruvisite",
+      "detailProject": {
+        "titleHero": "TFE / Bruvisite",
+        "imgHero": "/works/detail/grandPlace-detail.webp",
+        "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
+        "techno" : "Projet réalisé avec : Vue.js / Nuxt.js"
+      },
+      "detailMain": [
+        {
+          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "altMain": "Img"
+        },
+        {
+          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "altMain": "Img"
+        }
+      ]
     },
     {
-        "titleProject" : "Atomium",
-        "imgProject" : "/atomium-hero.webp"
+      "titleProject": "Design museum",
+      "imgProject": "/atomium-hero.webp",
+      "url": "design-museum",
+      "detailProject": {
+        "titleHero": "Design museum",
+        "imgHero": "/works/detail/design_museum.webp",
+        "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
+        "techno" : "Projet réalisé en : Html / Scss / Boostrap et Javascript"
+      },
+      "detailMain": [
+        {
+          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "altMain": "Img"
+        },
+        {
+          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "altMain": "Img"
+        }
+      ]
     }
-]
+  ],
+  "aboutPage": {}
+}

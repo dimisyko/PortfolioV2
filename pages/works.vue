@@ -2,20 +2,23 @@
   <div>
     <Header />
     <main role="main" class="overflow-x">
-        <section class="project" v-for="(project, i) in works" :key="i">
-            <h2 class="project__title">{{project.titleProject}}</h2>
-              <div class="project__img" :style="{ backgroundImage: 'url(' + project.imgProject + ')' }"></div>
-        </section>
+      <section class="project" v-for="(project, i) in works.projectsPage" :key="i">
+        <nuxt-link class="project__title" :to="`project/${project.url}`">{{ project.titleProject }}</nuxt-link>
+        <div
+          class="project__img"
+          :style="{ backgroundImage: 'url(' + project.imgProject + ')' }"
+        ></div>
+      </section>
     </main>
   </div>
 </template>
 
 <script>
-import works from "@/data/works.json"
+import works from "@/data/works.json";
 export default {
   name: "Works",
-asyncData ({ params }) {
-    return { works }
+  asyncData({ params }) {
+    return { works };
   },
   head() {
     return {
@@ -26,36 +29,44 @@ asyncData ({ params }) {
 </script>
 
 <style lang="scss">
-.project{
+.project {
   height: 100vh;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  &__title{
+  &__title {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     white-space: nowrap;
-    font-size: 3rem;
-    @include phone{
-         font-size: 5rem; 
+    &::after {
+      @include after(100%, 0);
+      background-color: white;
+      height: 5px;
+      width: 100%;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.7s cubic-bezier(.87,0,.12,1);
     }
-    @include laptop{
-        font-size: 7vw; 
+    &:hover {
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
     }
   }
-  &__img{
+  &__img {
     position: relative;
     background-attachment: fixed;
-  height: 100%;
-  background-size: cover;
-  &::after{
-    @include after(0, 0);
-    background-color: rgba(0, 0, 0, 0.455);
     height: 100%;
-    width: 100%;
-    z-index: 1;
+    background-size: cover;
+    &::after {
+      @include after(0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+    }
   }
-}
 }
 </style>
