@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="overflow-x">
     <Header />
-    <main role="main" class="overflow-x">
+    <main class="site-main">
       <section class="project" v-for="(project, i) in works.projectsPage" :key="i">
         <nuxt-link class="project__title" :to="`project/${project.url}`">{{ project.titleProject }}</nuxt-link>
         <div
@@ -65,7 +65,6 @@ export default {
       background-color: rgba(0, 0, 0, 0.4);
       height: 100%;
       width: 100%;
-      z-index: 1;
     }
   }
 }

@@ -1,40 +1,59 @@
-@mixin centerObs($top, $left, $x, $y){
-    position: absolute;
-    top: $top;
-    left: $left;
-    transform: translate($x,$y);
+%centerFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-@mixin after ($top, $left){
-    content: '';
-    position: absolute;
-    top: $top;
-    left: $left;
-}
-%centerFlex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-%flex_between{
+%flex_between {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-@mixin phone {
-    @media (min-width: 768px) {
-      @content;
+@mixin svgHover($stroke){
+  &:hover {
+    svg {
+      &:first-of-type {
+        stroke-dashoffset: 0;
+      }
     }
   }
+  svg {
+    @include centerObs(50%, 50%, -50%, -50%);
+    &:first-of-type {
+      stroke-dasharray: $stroke;
+      stroke-dashoffset: $stroke;
+      transition: 1s ease;
+    }
+    &:last-child {
+      opacity: 0.5;
+    }
+  }
+}
+@mixin centerObs($top, $left, $x, $y) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($x, $y);
+}
+@mixin after($top, $left) {
+  content: "";
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+@mixin phone {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
 
 @mixin tablet {
-    @media (min-width: 992px) {
-      @content;
-    }
+  @media (min-width: 992px) {
+    @content;
   }
+}
 
-  @mixin laptop {
-    @media (min-width: 1200px) {
-      @content;
-    }
+@mixin laptop {
+  @media (min-width: 1200px) {
+    @content;
   }
+}

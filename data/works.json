@@ -8,7 +8,8 @@
         "titleHero": "TFE / Bruvisite",
         "imgHero": "/works/detail/grandPlace-detail.webp",
         "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
-        "techno" : "Projet réalisé avec : Vue.js / Nuxt.js"
+        "techno" : "Projet réalisé avec : Vue.js / Nuxt.js",
+        "linkProject" : "https://bruvisite.netlify.app"
       },
       "detailMain": [
         {
@@ -23,13 +24,14 @@
     },
     {
       "titleProject": "Design museum",
-      "imgProject": "/atomium-hero.webp",
+      "imgProject": "/works/crush.webp",
       "url": "design-museum",
       "detailProject": {
         "titleHero": "Design museum",
         "imgHero": "/works/detail/design_museum.webp",
         "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
-        "techno" : "Projet réalisé en : Html / Scss / Boostrap et Javascript"
+        "techno" : "Projet réalisé en : Html / Scss / Bootstrap et Javascript",
+        "linkProject": "https://design-museum.netlify.app/"
       },
       "detailMain": [
         {

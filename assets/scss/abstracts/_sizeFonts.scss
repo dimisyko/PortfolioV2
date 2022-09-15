@@ -6,7 +6,7 @@ h1, h2, h3, .project__title, .nbr{
   }
 
  h1, .project__title, .nbr{
-    font-size: 2.8rem;
+    font-size: 3rem;
     @include phone {
         font-size: 4.5rem;
       }
@@ -15,7 +15,7 @@ h1, h2, h3, .project__title, .nbr{
       }
   }
 
-p{
+p, .link-project{
     font-family: 'Poppins';
     color: white;
     font-size: 1rem;

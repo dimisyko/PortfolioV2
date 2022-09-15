@@ -1,11 +1,8 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  outline: none;
-}
 body{
   background-color: #B0B0B0;
+}
+::selection{
+  background-color: #df603c;
 }
   html, body, nav, header, footer, span,
   h1, h2, h3, p,
@@ -14,7 +11,7 @@ body{
   table, form, label, input, textarea, select, button, figure {
     margin: 0;
     padding: 0;
-    border: 0;
+    box-sizing: border-box;
   }
   ul, li {
     list-style: none;
