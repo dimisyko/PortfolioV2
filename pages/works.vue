@@ -8,6 +8,7 @@
           class="project__img"
           :style="{ backgroundImage: 'url(' + project.imgProject + ')' }"
         ></div>
+        <div class="btn-down">Défiler</div>
       </section>
     </main>
   </div>
@@ -39,21 +40,13 @@ export default {
     transform: translate(-50%, -50%);
     z-index: 2;
     white-space: nowrap;
-    &::after {
-      @include after(100%, 0);
-      background-color: white;
-      height: 5px;
-      width: 100%;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.7s cubic-bezier(.87,0,.12,1);
-    }
-    &:hover {
-      &::after {
-        transform: scaleX(1);
-        transform-origin: left;
-      }
-    }
+    @include lineAfter(5px, transform 0.7s cubic-bezier(.87,0,.12,1))
+  }
+  .btn-down{
+    position: fixed;
+    bottom: 7%;
+    left: 50%;
+    transform: translateX(-50%);
   }
   &__img {
     position: relative;

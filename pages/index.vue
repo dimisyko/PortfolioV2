@@ -73,7 +73,7 @@ export default {
     flex-direction: column;
     @include laptop {
       text-align: left;
-      width: 54%;
+      width: 53%;
       align-self: flex-start;
     }
   }

@@ -106,7 +106,7 @@ export default {
   &__logo{
     font-family: "Poppins";
     color: white;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
   &__burger {
     position: relative;

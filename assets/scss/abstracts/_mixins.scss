@@ -8,6 +8,35 @@
   justify-content: space-between;
   align-items: center;
 }
+@mixin centerObs($top, $left, $x, $y) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($x, $y);
+}
+@mixin after($top, $left) {
+  content: "";
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+@mixin lineAfter($h, $speed){
+  &::before{
+    @include after(100%, 0);
+  background-color: white;
+  width: 100%;
+  height: $h;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: $speed
+  }
+  &:hover{
+    &::before{
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+  }
+}
 @mixin svgHover($stroke){
   &:hover {
     svg {
@@ -27,18 +56,6 @@
       opacity: 0.5;
     }
   }
-}
-@mixin centerObs($top, $left, $x, $y) {
-  position: absolute;
-  top: $top;
-  left: $left;
-  transform: translate($x, $y);
-}
-@mixin after($top, $left) {
-  content: "";
-  position: absolute;
-  top: $top;
-  left: $left;
 }
 @mixin phone {
   @media (min-width: 768px) {

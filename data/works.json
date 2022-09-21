@@ -19,6 +19,18 @@
         {
           "imgMain": "/works/detail/grandPlace-detail.webp",
           "altMain": "Img"
+        },
+        {
+          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "altMain": "Img"
+        },
+        {
+          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "altMain": "Img"
+        },
+        {
+          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "altMain": "Img"
         }
       ]
     },
@@ -34,6 +46,18 @@
         "linkProject": "https://design-museum.netlify.app/"
       },
       "detailMain": [
+        {
+          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "altMain": "Img"
+        },
+        {
+          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "altMain": "Img"
+        },
+        {
+          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "altMain": "Img"
+        },
         {
           "imgMain": "/works/detail/grandPlace-detail.webp",
           "altMain": "Img"
