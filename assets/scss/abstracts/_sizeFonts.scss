@@ -14,7 +14,15 @@ h1, h2, h3, .project__title, .nbr{
         font-size: 7vw;
       }
   }
-
+h2{
+  font-size: 2.8rem;
+  @include phone {
+    font-size: 4rem;
+  }
+  @include laptop {
+    font-size: 6.5vw;
+  }
+}
 p, .link-project, .btn-back, .btn-down, .nbr-images{
     font-family: 'Poppins';
     color: white;

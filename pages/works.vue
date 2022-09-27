@@ -8,7 +8,7 @@
           class="project__img"
           :style="{ backgroundImage: 'url(' + project.imgProject + ')' }"
         ></div>
-        <div class="btn-down">Défiler</div>
+        <button class="btn-down">Défiler</button>
       </section>
     </main>
   </div>

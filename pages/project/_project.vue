@@ -2,47 +2,43 @@
   <div class="overflow-x">
     <Header />
     <section class="hero-flexi">
-      <div class="hero-flexi__head">
+      <div v-if="project.detailProject.linkProject" class="hero-flexi__txt">
         <h1 class="hero-flexi__title">{{ project.detailProject.titleHero }}</h1>
-        <div class="nbr">0{{ number_project + 1 }}</div>
-      </div>
-      <div class="hero-flexi__container">
-        <div v-if="project.detailProject.linkProject" class="hero-flexi__txt">
-          <p>{{ project.detailProject.txtHero }}</p>
-          <p>{{ project.detailProject.techno }}</p>
-          <a
-            class="link-project"
-            :href="project.detailProject.linkProject"
-            target="_blank"
-            rel="noopener noreferrer"
+        <p class="hero-flexi__paragraph">{{ project.detailProject.txtHero }}</p>
+        <a
+          class="link-project"
+          :href="project.detailProject.linkProject"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="link-val">Voir le projet</div>
+          <svg
+            v-for="svg in 2"
+            :key="svg"
+            width="140"
+            height="50"
+            viewBox="0 0 181 59"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <div class="link-val">Voir le projet</div>
-            <svg
-              v-for="svg in 2"
-              :key="svg"
-              width="140"
-              height="50"
-              viewBox="0 0 181 59"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                x="0.5"
-                y="0.5"
-                width="180"
-                height="58"
-                rx="29"
-                stroke="white"
-                stroke-width="1.7"
-              />
-            </svg>
-          </a>
-        </div>
-        <div v-else class="hero-flexi__txt">
-          <p>{{ project.detailProject.txtHero }}</p>
-          <p>{{ project.detailProject.techno }}</p>
-        </div>
-        <picture class="hero-flexi__img">
+            <rect
+              x="0.5"
+              y="0.5"
+              width="180"
+              height="58"
+              rx="29"
+              stroke="white"
+              stroke-width="1.7"
+            />
+          </svg>
+        </a>
+      </div>
+       <div v-else class="hero-flexi__txt">
+        <h1 class="hero-flexi__title">{{ project.detailProject.titleHero }}</h1>
+        <p class="hero-flexi__paragraph">{{ project.detailProject.txtHero }}</p>
+      </div>
+      <div class="hero-flexi__left">
+        <picture class="hero-flexi__img" v>
           <nuxt-img
             :src="project.detailProject.imgHero"
             sizes="sm:70vw md:100vw lg:100vw"
@@ -56,18 +52,39 @@
         <picture
           v-for="(list, i) in project.detailMain"
           :key="i"
-          class="list-imgs__project"
+          class="list-imgs__project hide"
         >
           <nuxt-img
+            v-animate-parallax:[directionY]="6"
             :src="list.imgMain"
             sizes="sm:70vw md:100vw lg:100vw"
+            data-v="-0.16"
+            class="parallax"
             :alt="list.altMain"
           />
-          <div class="nbr-images">0{{ i + 1 }}</div>
         </picture>
       </section>
       <section class="next-project">
-          <h1>{{data.projectsPage[nextProject(number_project + 1)].titleProject}}</h1>
+        <div class="next-project__container">
+          <p>Projet suivant</p>
+          <nuxt-link
+          @mousemove.native="moveImg($event)"
+            :to="data.projectsPage[nextProject(number_project + 1)].url"
+            class="next-project__wrapper"
+          >
+            <Marquee
+              :value="
+                data.projectsPage[nextProject(number_project + 1)].titleProject
+              "
+            />
+          </nuxt-link>
+            <picture class="next-project__img" ref="img">
+            <nuxt-img
+              :src="data.projectsPage[nextProject(number_project + 1)].detailProject.imgHero"
+              sizes="sm:70vw md:100vw lg:100vw"
+              :alt="data.projectsPage[nextProject(number_project + 1)].detailProject.titleProject"/>
+          </picture>
+        </div>
       </section>
     </main>
   </div>
@@ -80,7 +97,14 @@ export default {
   data() {
     return {
       project: {},
-      number_project: 0
+      number_project: 0,
+      directionY: "translateY",
+      x : 0,
+      y : 0,
+      posX : 0,
+      posY : 0,
+      ease : 15,
+      raf : undefined
     };
   },
   asyncData({ params }) {
@@ -94,22 +118,34 @@ export default {
   created() {
     this.loop();
   },
+  mounted(){
+    this.rafMove()
+  },
+  beforeDestroy(){
+    cancelAnimationFrame(this.raf)
+  },
   methods: {
     loop() {
-      this.data.projectsPage.forEach((el, index) => {
-        if (el.url === this.$route.params.project) {
-          this.project = el;
-          this.number_project = index;
-        }
-      });
+      this.project = this.data.projectsPage.find((data) => data.url === this.$route.params.project)
+      this.number_project = this.data.projectsPage.indexOf(this.project);
     },
-     nextProject(index_project){
-      if(index_project < 0){
-        return this.data.projectsPage.length - 1
-      }else if(index_project > this.data.projectsPage.length - 1){
-        return 0
-      }else{
-        return index_project
+    moveImg(e){
+      this.x = e.clientX 
+      this.y = e.clientY 
+    },
+    rafMove(){
+      this.posX += (this.x - this.posX) / this.ease
+      this.posY += (this.y - this.posY) / this.ease
+      this.$refs.img.style.transform = "translate3d("+this.posX+"px,"+this.posY+"px, 0px) translate(-70%, -50%)"
+      this.raf = requestAnimationFrame(this.rafMove)
+    },
+    nextProject(index_project) {
+      if (index_project < 0) {
+        return this.data.projectsPage.length - 1;
+      } else if (index_project > this.data.projectsPage.length - 1) {
+        return 0;
+      } else {
+        return index_project;
       }
     },
   },
@@ -120,27 +156,22 @@ export default {
 .hero-flexi {
   display: flex;
   flex-direction: column;
-  &__head {
-    @extend %flex_between;
-    margin: 7rem auto 0 auto;
-    width: 90%;
-    @include phone {
-      margin: 9rem auto 0 auto;
-    }
-    @include tablet {
-      padding: 0.8vw 0;
-      border-bottom: 1.5px solid white;
-      border-top: 1.5px solid white;
-    }
+  height: 100vh;
+  @include tablet {
+    flex-direction: row;
   }
-  &__container {
+  &__txt {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    padding: 8rem 0 2rem 0;
+    @include phone {
+      height: 55%;
+      padding: 10rem 0 0 0;
+    }
     @include tablet {
-      margin-top: 3vw;
-      flex-direction: row;
+      padding: 0;
+      width: 40%;
     }
     .link-project {
       position: relative;
@@ -149,23 +180,30 @@ export default {
       @include svgHover(460);
     }
   }
-  &__txt {
-    width: 90%;
-    margin: 2.5rem auto;
-    p {
-      margin-bottom: 1.7rem;
+  &__title{
+    line-height: 1;
+  }
+  &__paragraph{
+      margin: 1rem 0;
+      @include phone {
+         margin: 1.7rem 0;
     }
+     @include tablet {
+         margin: 2vw 0;
+    }
+    }
+  &__left {
+    width: 100%;
+    height: 50vh;
     @include tablet {
-      width: 33%;
-      margin: 0 auto;
+      width: 50%;
+      height: 100%
     }
   }
   &__img {
-    width: 100%;
-    @include tablet {
-      width: 57%;
-      height: 100%;
-    }
+    overflow: hidden;
+    height: 100%;
+        @extend %centerFlex;
   }
 }
 .list-imgs {
@@ -176,36 +214,61 @@ export default {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(11, 1fr);
   }
-  .nbr-images{
-    margin-top: 1rem;
-    text-align: right;
-  }
   &__project {
     margin-bottom: 3rem;
+    @extend %centerFlex;
     @include phone {
       margin-bottom: 6rem;
     }
     @include tablet {
       margin-bottom: 0rem;
       &:first-child {
-    grid-area: 1/1/4/7;
+        grid-area: 1/1/4/7;
       }
       &:nth-child(2) {
-      grid-area: 3/8/5/13;
+        grid-area: 3/8/5/13;
       }
       &:nth-child(3) {
-grid-area: 6/5/9/12;
+        grid-area: 6/5/9/12;
       }
       &:nth-child(4) {
-   grid-area: 10/1/12/5;
+        grid-area: 10/1/12/5;
       }
       &:nth-child(5) {
- grid-area: 10/6/12/10;
+        grid-area: 10/6/12/10;
       }
     }
   }
 }
-.next-project{
+.next-project {
+  position: relative;
   height: 100vh;
+  @extend %centerFlex;
+  &__container {
+    width: 100%;
+    p {
+      text-align: center;
+      margin-bottom: 3rem;
+      @include laptop {
+        margin-bottom: 4vw;
+      }
+    }
+    .next-project__wrapper{
+    &:hover + {
+      .next-project__img {
+        opacity: 1;
+      }
+    }
+    }
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    width: 30%;
+    height: 30vw;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s 0.1s;
+  }
 }
 </style>

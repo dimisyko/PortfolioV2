@@ -16,6 +16,11 @@ body{
   ul, li {
     list-style: none;
   }
+  button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
   button:hover {
     cursor: pointer;
   }
@@ -35,6 +40,12 @@ body{
 }
 .overflow-x{
   overflow-x: hidden;
+}
+.parallax{
+  height: 100%;
+  @include tablet{
+    height: 120%;
+  }
 }
 .w-90{
   width: 90%;

@@ -8,9 +8,9 @@
         @click="$event.target.classList.toggle('active'); toggleMenu()"
         class="menu__burger"
       >
-        <div class="wrapper-line">
-          <div v-for="line in 3" :key="line" class="lineBurger"></div>
-        </div>
+        <span class="wrapper-line">
+          <span v-for="line in 3" :key="line" class="lineBurger"></span>
+        </span>
       </button>
     </div>
     <div class="menu__bg w-90">
