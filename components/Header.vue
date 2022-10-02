@@ -130,7 +130,7 @@ export default {
       height: 28%;
       width: 45%;
       pointer-events: none;
-      @include centerObs(50%, 50%, -50%, -50%);
+      @include centerObs(absolute,50%, 50%, -50%, -50%);
       .lineBurger {
         position: absolute;
         width: 100%;

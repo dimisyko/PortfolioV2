@@ -3,7 +3,7 @@
     <Header />
     <section class="hero-flexi">
       <div v-if="project.detailProject.linkProject" class="hero-flexi__txt">
-        <h1 class="hero-flexi__title">{{ project.detailProject.titleHero }}</h1>
+         <CutTitle classNameTitle="hero-flexi__title" classNameSpan="hero-flexi__span" :value="project.titleProject"/>
         <p class="hero-flexi__paragraph">{{ project.detailProject.txtHero }}</p>
         <a
           class="link-project"
@@ -34,7 +34,7 @@
         </a>
       </div>
        <div v-else class="hero-flexi__txt">
-        <h1 class="hero-flexi__title">{{ project.detailProject.titleHero }}</h1>
+       <CutTitle classNameTitle="hero-flexi__title" classNameSpan="home__split" :value="project.titleProject"/>
         <p class="hero-flexi__paragraph">{{ project.detailProject.txtHero }}</p>
       </div>
       <div class="hero-flexi__left">
@@ -82,7 +82,7 @@
             <nuxt-img
               :src="data.projectsPage[nextProject(number_project + 1)].detailProject.imgHero"
               sizes="sm:70vw md:100vw lg:100vw"
-              :alt="data.projectsPage[nextProject(number_project + 1)].detailProject.titleProject"/>
+              :alt="data.projectsPage[nextProject(number_project + 1)].titleProject"/>
           </picture>
         </div>
       </section>
@@ -91,7 +91,7 @@
 </template>
 
 <script>
-import data from "@/data/works.json";
+import data from "@/data/data.json";
 export default {
   name: "Detail",
   data() {
@@ -119,7 +119,7 @@ export default {
     this.loop();
   },
   mounted(){
-    this.rafMove()
+    this.fncRaf()
   },
   beforeDestroy(){
     cancelAnimationFrame(this.raf)
@@ -133,11 +133,11 @@ export default {
       this.x = e.clientX 
       this.y = e.clientY 
     },
-    rafMove(){
+    fncRaf(){
       this.posX += (this.x - this.posX) / this.ease
       this.posY += (this.y - this.posY) / this.ease
       this.$refs.img.style.transform = "translate3d("+this.posX+"px,"+this.posY+"px, 0px) translate(-70%, -50%)"
-      this.raf = requestAnimationFrame(this.rafMove)
+      this.raf = requestAnimationFrame(this.fncRaf)
     },
     nextProject(index_project) {
       if (index_project < 0) {
@@ -180,16 +180,20 @@ export default {
       @include svgHover(460);
     }
   }
-  &__title{
-    line-height: 1;
+  &__span{
+    @include tablet{
+    &:nth-child(2){
+      align-self: flex-end;
+    }
+    }
   }
   &__paragraph{
-      margin: 1rem 0;
+      margin: 1.5rem 0;
       @include phone {
          margin: 1.7rem 0;
     }
      @include tablet {
-         margin: 2vw 0;
+         margin: 4vw 0 2vw 0;
     }
     }
   &__left {
@@ -256,7 +260,7 @@ export default {
     .next-project__wrapper{
     &:hover + {
       .next-project__img {
-        opacity: 1;
+        clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
       }
     }
     }
@@ -266,9 +270,9 @@ export default {
     top: 0;
     width: 30%;
     height: 30vw;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.5s 0.1s;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: clip-path 0.7s 0.1s ease;
+    pointer-events: none;
   }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <h2 class="marquee">
-    <span v-for="word in 2" :key="word" class="marquee__words">
-      <span v-for="span in 5" :key="span">&nbsp;{{ value + ' - ' }}</span>
+  <h2 class="marquee hide">
+    <span v-for="word in 2" :key="word" class="marquee__container">
+      <span  v-for="span in 5" :key="span" :class="`marquee__word ${span % 2 === 0 ? 'even' : 'odd'}`">&nbsp;{{ value + ' - ' }}</span>
     </span>
   </h2>
 </template>
@@ -9,7 +9,7 @@
 <script>
 export default {
   name: "Marquee",
-  props: ["value"],
+  props: ["value"]
 };
 </script>
 
@@ -17,13 +17,13 @@ export default {
 .marquee {
   display: flex;
   white-space: nowrap;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  border: 1px solid white;
+  border-radius: 50vw;
   padding: 3rem 0;
   @include laptop{
     padding: 5% 0;
   }
-  &__words {
+  &__container {
     display: flex;
     white-space: nowrap;
     animation: animTxt 30s infinite linear;

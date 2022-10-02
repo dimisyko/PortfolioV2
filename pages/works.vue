@@ -8,14 +8,14 @@
           class="project__img"
           :style="{ backgroundImage: 'url(' + project.imgProject + ')' }"
         ></div>
-        <button class="btn-down">Défiler</button>
+        <p v-if="i < works.projectsPage.length - 1" class="btn-down">Défiler</p>
       </section>
     </main>
   </div>
 </template>
 
 <script>
-import works from "@/data/works.json";
+import works from "@/data/data.json";
 export default {
   name: "Works",
   asyncData({ params }) {
@@ -34,10 +34,7 @@ export default {
   height: 100vh;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   &__title {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include centerObs(fixed,50%, 50%, -50%, -50%);
     z-index: 2;
     white-space: nowrap;
     @include lineAfter(5px, transform 0.7s cubic-bezier(.87,0,.12,1))

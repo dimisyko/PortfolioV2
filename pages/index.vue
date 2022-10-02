@@ -3,11 +3,7 @@
     <Header />
     <section class="home w-90">
       <div class="home__txt">
-        <h1 class="home__title">
-          <span v-for="split in txt" :key="split" class="home__split">
-            {{ split }}
-          </span>
-        </h1>
+        <CutTitle classNameTitle="home__title" classNameSpan="home__split" value="Front-end dev. web designer"/>
         <nuxt-link class="link-projects" to="/works"
           ><span class="link"> Voir mes<br />projets </span>
           <span class="home__btn"><svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +21,6 @@ export default {
   name: "Home",
   data() {
     return {
-      txt: ["Front-end", "dev.", "/ web", "designer"],
        year : new Date()
     };
   },
@@ -68,9 +63,6 @@ export default {
   }
   &__title {
     text-align: center;
-    line-height: 0.85;
-    display: flex;
-    flex-direction: column;
     @include laptop {
       text-align: left;
       width: 53%;
@@ -81,6 +73,9 @@ export default {
     @include laptop {
       &:nth-child(2) {
         align-self: center;
+      }
+      &:nth-child(3) {
+        padding-left: 3vw;
       }
       &:nth-child(4) {
         align-self: flex-end;
