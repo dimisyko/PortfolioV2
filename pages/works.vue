@@ -26,8 +26,8 @@ export default {
   data(){
     return{
       project_nbr : 0,
-      touchMove : undefined,
-      touchStart : undefined,
+      touchMove : 0,
+      touchStart : 0,
       boo : true
     }
   },
@@ -81,9 +81,10 @@ export default {
     },
     wheelScroll(e){
     if(this.boo){
-      if(e.deltaY > 10 || this.touchMove){
+      const direction = e.deltaY || this.touchMove
+      if(direction > 10){
         this.boolean(this.nextProject())
-      }else if(e.deltaY < -10){
+      }else if(direction < -10){
           this.boolean(this.prevProject())
       }
     }
