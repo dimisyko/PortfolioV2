@@ -1,6 +1,9 @@
 <template>
     <h1 :class="`title ${classNameTitle}`">
-      <span :class="classNameSpan" v-for="(letter, i) in tab" :key="i">{{letter}}</span>
+      <span :class="`${classNameSpan} hide`" v-for="(letter, i) in tab" :key="i" 
+      v-animate-parallax:[directionX]="4" :data-v="`${i % 2 === 0 ? data_left : data_right}`">
+        <span class="stagger">{{letter}}</span>
+      </span>
     </h1>
 </template>
 
@@ -9,10 +12,11 @@ export default {
     name : "CutTitle",
   data(){
     return{
+      directionX: "translateX",
       tab : ""
     }
   },
-  props: ["value", "classNameTitle", "classNameSpan"],
+  props: ["value", "classNameTitle", "classNameSpan", "data_left", "data_right"],
   mounted(){
    this.cutTitle()
   },
@@ -29,6 +33,5 @@ export default {
   .title{
     display: flex;
     flex-direction: column;
-    line-height: 0.85;
   }
 </style>

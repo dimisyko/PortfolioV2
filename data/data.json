@@ -67,5 +67,6 @@
       ]
     }
   ],
-  "aboutPage": {}
+  "aboutPageSkills": ["Html / Pug", "Css / Scss", "Js ( vanilla )", "Wordpress / Php", "Vue.js / Nuxt.js", "GitHub", "Photoshop / Illustrator / Figma", "Node.js / Express.js ( en cours )"]
+  
 }

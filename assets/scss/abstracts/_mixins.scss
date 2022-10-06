@@ -8,8 +8,8 @@
   justify-content: space-between;
   align-items: center;
 }
-@mixin centerObs($option, $top, $left, $x, $y) {
-  position: $option;
+@mixin centerObs($position, $top, $left, $x, $y) {
+  position: $position;
   top: $top;
   left: $left;
   transform: translate($x, $y);

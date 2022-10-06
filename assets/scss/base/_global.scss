@@ -1,8 +1,14 @@
+*{
+  scrollbar-width: none;
+}
 body{
   background-color: #B0B0B0;
 }
 ::selection{
   background-color: #df603c;
+}
+::-webkit-scrollbar{
+  display: none;
 }
   html, body, nav, header, footer, span,
   h1, h2, h3, p,

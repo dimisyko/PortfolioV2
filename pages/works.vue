@@ -1,14 +1,19 @@
 <template>
   <div class="overflow-x">
     <Header />
+      <Indicator/>
     <main class="site-main">
-      <section class="project" v-for="(project, i) in works.projectsPage" :key="i">
-        <nuxt-link class="project__title" :to="`project/${project.url}`">{{ project.titleProject }}</nuxt-link>
-        <div
-          class="project__img"
-          :style="{ backgroundImage: 'url(' + project.imgProject + ')' }"
-        ></div>
-        <p v-if="i < works.projectsPage.length - 1" class="btn-down">Défiler</p>
+      <section class="project w-90">
+        <div class="project__container">
+          <h2 class="project__title">{{works.projectsPage[project_nbr].titleProject}}</h2>
+        <nuxt-link class="project__link" :to="`project/${works.projectsPage[project_nbr].url}`">
+          <picture class="project__img">
+            <nuxt-img :src="works.projectsPage[project_nbr].imgProject"/>
+          </picture>    
+        </nuxt-link>
+        <div class="project__nbr">0{{project_nbr + 1}} / 0{{works.projectsPage.length}}</div>
+        <div class="scroll-down">Défiler</div>
+        </div>
       </section>
     </main>
   </div>
@@ -18,6 +23,14 @@
 import works from "@/data/data.json";
 export default {
   name: "Works",
+  data(){
+    return{
+      project_nbr : 0,
+      touchMove : undefined,
+      touchStart : undefined,
+      boo : true
+    }
+  },
   asyncData({ params }) {
     return { works };
   },
@@ -26,36 +39,122 @@ export default {
       title: "Travaux - Portfolio",
     };
   },
+  mounted(){
+    window.addEventListener('wheel', this.wheelScroll)
+    document.addEventListener('touchstart', (e) =>{
+        this.touchStart = e.targetTouches[0].clientY
+        document.addEventListener('touchmove', this.touchMoveScreen)
+    })
+  },
+  computed :{
+    lengthProject(){
+      return works.projectsPage.length - 1
+    }
+  },
+  methods:{
+    nextProject(){
+      if(this.project_nbr < this.lengthProject){
+          this.project_nbr++
+      }else{
+        this.project_nbr = 0
+      }
+    },
+    prevProject(){
+      if(this.project_nbr > 0){
+          this.project_nbr--
+      }else{
+          this.project_nbr = this.lengthProject
+      }
+    },
+    touchMoveScreen(e){
+        const touchMove = e.targetTouches[0].clientY
+        this.touchMove = this.touchStart - touchMove
+        this.wheelScroll(e)
+        this.touchStart = touchMove
+    },
+    boolean(fcn){
+        this.boo = false
+        fcn
+        setTimeout(() => {
+          this.boo = true 
+        }, 1000);
+    },
+    wheelScroll(e){
+    if(this.boo){
+      if(e.deltaY > 10 || this.touchMove){
+        this.boolean(this.nextProject())
+      }else if(e.deltaY < -10){
+          this.boolean(this.prevProject())
+      }
+    }
+    }
+  }
 };
 </script>
 
 <style lang="scss">
 .project {
+  position: relative;
   height: 100vh;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  &__title {
-    @include centerObs(fixed,50%, 50%, -50%, -50%);
-    z-index: 2;
-    white-space: nowrap;
-    @include lineAfter(5px, transform 0.7s cubic-bezier(.87,0,.12,1))
-  }
-  .btn-down{
-    position: fixed;
-    bottom: 7%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  &__img {
-    position: relative;
-    background-attachment: fixed;
+  @extend %centerFlex;
+&__container{
+    @include tablet{
+    width: 100%;
     height: 100%;
-    background-size: cover;
-    &::after {
-      @include after(0, 0);
-      background-color: rgba(0, 0, 0, 0.4);
-      height: 100%;
-      width: 100%;
     }
+}
+&__link{
+  width: 100%;
+  height: 85vw;
+ margin: 2rem 0;
+ @include phone{
+   height: 65vw; 
+ }
+  @include tablet{
+    overflow: hidden;
+    @include centerObs(absolute, 50%, 50%, -50%, -50%);
+    width: 35%;
+    height: 35vw;
   }
+
+}
+ &__img{
+  position: relative;
+  height: 100%;
+  transition: 0.5s;
+    &:hover{
+      transform: scale(1.1);
+    }
+
+  &::after{
+  @include after(0, 0);
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.253);
+  z-index: 1;
+
+  }
+ }
+  &__title{
+  line-height: 0.9;
+  pointer-events: none;
+  @include tablet{
+     @include centerObs(absolute, 50%, 50%, -50%, -50%);
+     white-space: nowrap;
+     z-index: 1;
+  }
+ }
+ &__nbr{
+  @include tablet{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  }
+ }
+ .scroll-down{
+  @include centerObs(absolute, 90%, 50%, -50%, 0);
+ }
 }
 </style>

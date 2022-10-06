@@ -1,9 +1,10 @@
 <template>
   <div class="overflow-x">
     <Header />
+      <Indicator/>
     <section class="hero-flexi">
       <div v-if="project.detailProject.linkProject" class="hero-flexi__txt">
-         <CutTitle classNameTitle="hero-flexi__title" classNameSpan="hero-flexi__span" :value="project.titleProject"/>
+         <CutTitle classNameTitle="hero-flexi__title" classNameSpan="hero-flexi__span" :value="project.titleProject" data_left="0.2" data_right="-0.2"/>
         <p class="hero-flexi__paragraph">{{ project.detailProject.txtHero }}</p>
         <a
           class="link-project"
@@ -136,7 +137,8 @@ export default {
     fncRaf(){
       this.posX += (this.x - this.posX) / this.ease
       this.posY += (this.y - this.posY) / this.ease
-      this.$refs.img.style.transform = "translate3d("+this.posX+"px,"+this.posY+"px, 0px) translate(-70%, -50%)"
+      const rotateX = this.posX - this.x
+      this.$refs.img.style.transform = "translate3d("+this.posX+"px,"+this.posY+"px, 0px) translate(-70%, -50%) rotate(" + (rotateX / 20).toFixed(2) + "deg)"
       this.raf = requestAnimationFrame(this.fncRaf)
     },
     nextProject(index_project) {
@@ -211,7 +213,7 @@ export default {
   }
 }
 .list-imgs {
-  margin: 8rem 0;
+  margin: 12rem 0 10rem 0;
   display: grid;
   @include tablet {
     margin: 15rem 0;

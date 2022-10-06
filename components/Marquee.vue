@@ -1,7 +1,7 @@
 <template>
   <h2 class="marquee hide">
     <span v-for="word in 2" :key="word" class="marquee__container">
-      <span  v-for="span in 5" :key="span" :class="`marquee__word ${span % 2 === 0 ? 'even' : 'odd'}`">&nbsp;{{ value + ' - ' }}</span>
+      <span  v-for="span in 5" :key="span" class="marquee__word">&nbsp;{{ value + ' - ' }}</span>
     </span>
   </h2>
 </template>
