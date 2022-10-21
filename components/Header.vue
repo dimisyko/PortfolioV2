@@ -17,9 +17,9 @@
       <svg
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
-        class="bg-transition"
+        class="bg-menu-svg"
       >
-        <path fill="#df603c" d="M 0 0 Q 50 0 100 0 V 0 Q 50 0 0 0 Z" />
+        <path class="bg-menu" fill="#df603c" d="M 0 0 Q 50 0 100 0 V 0 Q 50 0 0 0 Z" />
       </svg>
       <nav class="menu__nav">
         <ul class="menu__wrapper">
@@ -60,12 +60,12 @@ export default {
   },
    methods: {
     menuAnim() {
-      this.tlOpen.to(".bg-transition path",{
+      this.tlOpen.to(".bg-menu",{
             attr : {'d' : "M 0 0 Q 50 0 100 0 V 15 Q 50 100 0 15 Z"},
             duration: 0.7,
             ease: 'power4.in',
         },)
-      this.tlOpen.to(".bg-transition path",{
+      this.tlOpen.to(".bg-menu",{
             attr : {'d' : "M 0 0 Q 50 0 100 0 V 100 Q 50 100 0 100 Z"},
             duration: 0.4,
             ease: 'power2',
@@ -152,7 +152,7 @@ export default {
   &__bg {
     height: 75vh;
     pointer-events: none;
-    .bg-transition {
+    .bg-menu-svg {
       position: fixed;
       top: 0;
       left: 0;

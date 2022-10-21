@@ -2,7 +2,6 @@
   <div class="overflow-x">
     <Header />
       <Indicator/>
-    <main class="site-main">
       <section class="project w-90">
         <div class="project__container">
           <h2 class="project__title">{{works.projectsPage[project_nbr].titleProject}}</h2>
@@ -15,12 +14,12 @@
         <div class="scroll-down">Défiler</div>
         </div>
       </section>
-    </main>
   </div>
 </template>
 
 <script>
 import works from "@/data/data.json";
+import gsap from "gsap";
 export default {
   name: "Works",
   data(){
@@ -28,7 +27,8 @@ export default {
       project_nbr : 0,
       touchMove : 0,
       touchStart : 0,
-      boo : true
+      boo : true,
+      tlGsap : gsap.timeline()
     }
   },
   asyncData({ params }) {
@@ -46,6 +46,9 @@ export default {
         document.addEventListener('touchmove', this.touchMoveScreen)
     })
   },
+  beforeDestroy(){
+ window.removeEventListener('wheel', this.wheelScroll)
+  },
   computed :{
     lengthProject(){
       return works.projectsPage.length - 1
@@ -53,18 +56,10 @@ export default {
   },
   methods:{
     nextProject(){
-      if(this.project_nbr < this.lengthProject){
-          this.project_nbr++
-      }else{
-        this.project_nbr = 0
-      }
+    this.project_nbr < this.lengthProject ? this.project_nbr++ : this.project_nbr = 0
     },
     prevProject(){
-      if(this.project_nbr > 0){
-          this.project_nbr--
-      }else{
-          this.project_nbr = this.lengthProject
-      }
+    this.project_nbr > 0 ? this.project_nbr-- : this.project_nbr = this.lengthProject
     },
     touchMoveScreen(e){
         const touchMove = e.targetTouches[0].clientY
@@ -72,9 +67,36 @@ export default {
         this.wheelScroll(e)
         this.touchStart = touchMove
     },
-    boolean(fcn){
+    animProject(){
+      this.tlGsap.to('.project__title', {
+        opacity : 0,
+        y : "-100%",
+        duration : 0.7
+      })
+      this.tlGsap.to('.project__link', {
+        y : "-100%",
+        duration : 2,
+        ease : "Expo.easeInOut"
+      })
+      this.tlGsap.add(() => this.nextProject())
+       this.tlGsap.set('.project__title, .project__link', {
+        y : "100%"
+      })
+      this.tlGsap.to('.project__link', {
+        y : "0%",
+        duration : 2,
+        ease :"Expo.easeInOut"
+      })
+       this.tlGsap.to('.project__title', {
+        opacity : 1,
+        y : "0%",
+        duration : 0.7
+      })
+     
+    },
+    boolean(){
         this.boo = false
-        fcn
+        this.animProject()
         setTimeout(() => {
           this.boo = true 
         }, 1000);
@@ -83,9 +105,7 @@ export default {
     if(this.boo){
       const direction = e.deltaY || this.touchMove
       if(direction > 10){
-        this.boolean(this.nextProject())
-      }else if(direction < -10){
-          this.boolean(this.prevProject())
+        this.boolean()
       }
     }
     }

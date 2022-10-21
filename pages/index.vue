@@ -3,7 +3,7 @@
     <Header />
     <section class="home w-90">
       <div class="home__txt">
-        <CutTitle classNameTitle="home__title" classNameSpan="home__split" value="Front-end dev. web designer"/>
+        <CutTitle classNameTitle="home__title" classNameSpan="home__split" data_left="0" data_right="0" value="Front-end dev. web designer"/>
         <nuxt-link class="link-projects" to="/works"
           ><span class="link"> Voir mes<br />projets </span>
           <span class="home__btn"><svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">

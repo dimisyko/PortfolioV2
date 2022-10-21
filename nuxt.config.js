@@ -58,9 +58,49 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxt/image'
+    '@nuxt/image',
+    'nuxt-gsap-module'
   ],
-
+  pageTransition: {
+    leave(el, done) {
+      const gsapLeave = this.$gsap.timeline()
+      gsapLeave.set(".bg, .bg-transition", {
+        attr: { d: 'M 0 100 Q 50 100 100 100 V 100 Q 50 100 0 100 Z' },
+        zIndex : 999
+    })
+    gsapLeave.to(".bg",{
+      attr : {'d' : "M 0 100 Q 50 100 100 100 V 80 Q 50 0 0 80 Z"},
+      duration: 0.7,
+      ease: 'power4.in',
+  })
+  gsapLeave.to(".bg",{
+    attr : {'d' : "M 0 100 Q 50 100 100 100 V 0 Q 50 0 0 0 Z"},
+    duration: 0.4,
+    ease: 'power2'
+  })
+  gsapLeave.add(() => done())
+},
+    enter () {
+      const gsapEnter = this.$gsap.timeline()
+      gsapEnter.set(".bg, .bg-transition", {
+        attr: { d: 'M 0 100 Q 50 100 100 100 V 0 Q 50 0 0 0 Z' },
+        zIndex : 999
+    })
+    gsapEnter.to(".bg",{
+        attr : {'d' : "M 0 80 Q 50 0 100 80 V 0 Q 50 0 0 0 Z"},
+        duration: 0.7,
+        ease: 'power4.in',
+    })
+    gsapEnter.to(".bg",{
+        attr : {'d' : "M 0 0 Q 50 0 100 0 V 0 Q 50 0 0 0 Z"},
+        duration: 0.4,
+        ease: 'power2',
+    })
+    gsapEnter.set(".bg-transition",{
+      zIndex : 0
+  })
+    },
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/style-resources'
