@@ -19,7 +19,7 @@
         preserveAspectRatio="none"
         class="bg-menu-svg"
       >
-        <path class="bg-menu" fill="#df603c" d="M 0 0 Q 50 0 100 0 V 0 Q 50 0 0 0 Z" />
+        <path class="bg-menu" fill="#D3BF04" d="M 0 0 Q 50 0 100 0 V 0 Q 50 0 0 0 Z" />
       </svg>
       <nav class="menu__nav">
         <ul class="menu__wrapper">
@@ -169,19 +169,16 @@ export default {
   &__list {
     padding: 2.5rem 0;
     opacity: 0;
-    border-top: 1.5px solid #f1f1f1;
+    border-top: 1.5px solid white;
     display: flex;
     &:last-child {
-      border-bottom: 1.5px solid #f1f1f1;
+      border-bottom: 1.5px solid white;
     }
     @include phone {
       padding: 3rem 0;
     }
-    @include tablet {
-      padding: 2.5rem 0;
-    }
     @include laptop {
-      padding: 2vw 0;
+      padding: 0;
       &:first-child {
         padding-left: 12vw;
       }
@@ -196,13 +193,13 @@ export default {
   }
   &__link {
     position: relative;
-    color: #f1f1f1;
-    font-size: 2.5rem;
-    font-family: "Neue";
+    color: white;
+    font-size: 3rem;
+    font-family: "Mongoose";
     text-transform: uppercase;
     transform: translate(0, 170%);
       color: transparent;
-      -webkit-text-stroke: 1px #f1f1f1;
+      -webkit-text-stroke: 1px white;
     &.nuxt-link-exact-active{
         pointer-events: none;
         &::after{
@@ -215,7 +212,7 @@ export default {
         left: 0;
         width: 100%;
         overflow: hidden;
-        color: #f1f1f1;
+        color: white;
         transition: width 0.7s;
       }
         &:hover{
@@ -224,14 +221,11 @@ export default {
           }
         }
     @include phone {
-      font-size: 3rem;
-    }
-    @include tablet {
       font-size: 4rem;
     }
     @include laptop {
-      -webkit-text-stroke: 1.5px #f1f1f1;
-      font-size: 7vw;
+      -webkit-text-stroke: 1.5px white;
+      font-size: 12vw;
       transform: translate(0, 110%);
     }
   }

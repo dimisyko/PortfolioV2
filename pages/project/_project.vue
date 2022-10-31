@@ -3,9 +3,19 @@
     <Header />
       <Indicator/>
     <section class="hero-flexi">
-      <div v-if="project.detailProject.linkProject" class="hero-flexi__txt">
-         <CutTitle classNameTitle="hero-flexi__title" classNameSpan="hero-flexi__span" :value="project.titleProject" data_left="0.2" data_right="-0.2"/>
-        <p class="hero-flexi__paragraph">{{ project.detailProject.txtHero }}</p>
+        <h1 v-animate-parallax:[directionX]="6" data-v="-0.25" class="hero-flexi__title">{{project.titleProject}}</h1>
+        <picture class="hero-flexi__img">
+          <nuxt-img
+            :src="project.detailProject.imgHero"
+            sizes="sm:70vw md:100vw lg:100vw"
+            :alt="project.titleProject"
+          />
+        </picture>
+    </section>
+    <main class="site-main w-90">
+      <div class="info-project">
+        <div v-if="project.detailProject.linkProject" class="info-project__content">
+       <p>{{project.detailProject.txtHero}}</p>
         <a
           class="link-project"
           :href="project.detailProject.linkProject"
@@ -33,22 +43,12 @@
             />
           </svg>
         </a>
+        </div>
+         <div v-else class="info-project__content">
+         <p>{{project.detailProject.txtHero}}</p>
+        </div>
+        <div class="nbr">0 {{number_project + 1}}</div>
       </div>
-       <div v-else class="hero-flexi__txt">
-       <CutTitle classNameTitle="hero-flexi__title" classNameSpan="home__split" :value="project.titleProject"/>
-        <p class="hero-flexi__paragraph">{{ project.detailProject.txtHero }}</p>
-      </div>
-      <div class="hero-flexi__left">
-        <picture class="hero-flexi__img" v>
-          <nuxt-img
-            :src="project.detailProject.imgHero"
-            sizes="sm:70vw md:100vw lg:100vw"
-            :alt="project.titleProject"
-          />
-        </picture>
-      </div>
-    </section>
-    <main class="site-main w-90">
       <section class="list-imgs">
         <picture
           v-for="(list, i) in project.detailMain"
@@ -100,6 +100,7 @@ export default {
       project: {},
       number_project: 0,
       directionY: "translateY",
+      directionX: "translateX",
       x : 0,
       y : 0,
       posX : 0,
@@ -156,39 +157,8 @@ export default {
 
 <style lang="scss">
 .hero-flexi {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   height: 100vh;
-  @include tablet {
-    flex-direction: row;
-  }
-  &__txt {
-    height: 100%;
-    width: 90%;
-    margin: auto;
-    padding: 8rem 0 2rem 0;
-    @include phone {
-      height: 55%;
-      padding: 10rem 0 0 0;
-    }
-    @include tablet {
-      padding: 0;
-      width: 40%;
-    }
-    .link-project {
-      position: relative;
-      width: fit-content;
-      padding: 17px;
-      @include svgHover(460);
-    }
-  }
-  &__span{
-    @include tablet{
-    &:nth-child(2){
-      align-self: flex-end;
-    }
-    }
-  }
   &__paragraph{
       margin: 1.5rem 0;
       @include phone {
@@ -198,18 +168,71 @@ export default {
          margin: 4vw 0 2vw 0;
     }
     }
-  &__left {
-    width: 100%;
-    height: 50vh;
-    @include tablet {
-      width: 50%;
-      height: 100%
+
+  &__title{
+    @extend %centerFlex;
+    height: 100%;
+    white-space: nowrap;
+    font-size: 9rem;
+    @include phone{
+      font-size: 13rem;
+    }
+    @include tablet{
+      font-size: 17rem;
+    }
+    @include laptop{
+    font-size: 28vw;
     }
   }
-  &__img {
-    overflow: hidden;
-    height: 100%;
-        @extend %centerFlex;
+  &__img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-7deg);
+    width: 27%;
+    height: 32vw;
+  }
+}
+.info-project{
+  margin-top: 7rem;
+      display: flex;
+    flex-direction: column;
+    height: 15rem;
+    @include tablet{
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  &__content{
+    .link-project {
+      position: relative;
+      width: fit-content;
+      padding: 17px;
+      @include svgHover(460);
+    }
+    p{
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    @include tablet{
+     width: 45%;
+    }
+  }
+  .nbr{
+    font-size: 10rem;
+     white-space: nowrap;
+     color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.555);
+    @include phone{
+      font-size: 13rem;
+    }
+    @include tablet{
+      font-size: 17rem;
+      transform: translate(20%, -20vh);
+    }
+    @include laptop{
+    font-size: 35vw;
+    transform: translate(20%, -40vh);
+    }
   }
 }
 .list-imgs {

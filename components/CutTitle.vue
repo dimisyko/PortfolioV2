@@ -22,7 +22,7 @@ export default {
   },
   methods:{
     cutTitle(){
-       const split = this.$props.value.split(' ')
+       const split = this.$props.value.split('  ')
        this.tab = split
     }
   }

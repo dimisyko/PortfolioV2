@@ -4,11 +4,11 @@
     <Indicator />
     <section class="hero-about">
       <CutTitle
-        classNameTitle="hero-about__title"
+        classNameTitle="hero-about__title title-primary"
         classNameSpan="hero-about__span"
-        value="Sykovaris Dimitrios developpeur designer"
-        data_left="0.2"
-        data_right="-0.2"
+        value="Sykovaris Dimitrios  developpeur  designer"
+        data_left="-0.2"
+        data_right="0.2"
       />
     </section>
     <main class="site-main">
@@ -118,19 +118,17 @@ export default {
   height: 100vh;
   @extend %centerFlex;
   .hero-about__title {
-    @include tablet {
-      width: 65%;
-    }
+    width: 90%;
   }
   &__span {
     @include tablet {
       &:first-child {
-        align-self: center;
+        align-self: flex-start;
       }
-      &:nth-child(3) {
+      &:nth-child(2) {
         align-self: flex-end;
       }
-      &:nth-child(4) {
+      &:nth-child(3) {
         align-self: center;
       }
     }
@@ -146,14 +144,15 @@ export default {
   @include tablet {
     display: flex;
     justify-content: space-between;
-     width: 75%;
-    margin: 8% auto 20% auto;
+    align-items: center;
+     width: 70%;
+    margin: 12% auto 20% auto;
   }
   &__title {
     margin-bottom: 1.5rem;
     @include tablet {
       width: 20%;
-      line-height: 0.9;
+      line-height: 0.8;
       margin-bottom: 0;
     }
   }
@@ -188,7 +187,7 @@ export default {
     }
   }
   &__container {
-    background-color: #df603c;
+    background-color: #D3BF04;
     padding: 7rem 0;
     @include phone {
       padding: 12rem 0;
@@ -230,7 +229,7 @@ export default {
     line-height: 0.9;
     width: 100%;
     @include tablet {
-      width: 50%;
+      width: 40%;
       margin-left: 5%;
     }
   }
@@ -268,7 +267,7 @@ export default {
 .contact{
    height: 100vh;
   @extend %centerFlex;
-  background-color: #df603c;
+  background-color: #D3BF04;
    &__container {
     p {
       text-align: center;

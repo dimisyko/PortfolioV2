@@ -27,7 +27,7 @@ export default {
 <style lang="scss">
 .error {
   height: 100vh;
-  background-color: #df603c;
+  background-color: #D3BF04;
   &__txt {
     @extend %centerFlex;
     flex-direction: column;

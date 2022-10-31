@@ -21,7 +21,7 @@ export default {
   border-radius: 50vw;
   padding: 3rem 0;
   @include laptop{
-    padding: 5% 0;
+    padding: 4% 0;
   }
   &__container {
     display: flex;
