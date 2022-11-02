@@ -17,9 +17,9 @@ export default {
 .marquee {
   display: flex;
   white-space: nowrap;
-  border: 1px solid white;
+  border: 1px solid #F92E2D;
   border-radius: 50vw;
-  padding: 3rem 0;
+  padding: 1.7rem 0;
   @include laptop{
     padding: 4% 0;
   }

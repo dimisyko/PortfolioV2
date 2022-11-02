@@ -56,7 +56,6 @@ export default {
   width: 100%;
   height: 85vw;
  margin: 2rem 0;
-  overflow: hidden;
  @include phone{
    height: 65vw; 
  }
@@ -71,19 +70,8 @@ export default {
  &__img{
   position: relative;
   height: 100%;
-  transition: 0.5s;
-    &:hover{
-      transform: scale(1.1);
-    }
-
-  &::after{
-  @include after(0, 0);
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.253);
-  z-index: 1;
-
-  }
+  padding: 15px;
+  background-color: white;
  }
   &__title{
   line-height: 0.9;

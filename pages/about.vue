@@ -10,10 +10,16 @@
         data_left="-0.2"
         data_right="0.2"
       />
+      <span class="hero-about__big">
+          About
+      </span>
+      <span class="hero-about__big">
+          me
+      </span>
     </section>
     <main class="site-main">
       <section class="bio">
-        <h2 class="bio__title">Ma bio</h2>
+        <h2 v-animate-parallax:[directionY]="4" data-v="0.25" class="bio__title">Ma bio</h2>
         <p class="bio__paragraph">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
           sed rem distinctio amet ut repellendus ipsa voluptatum animi illum
@@ -47,7 +53,7 @@
         <h2 class="internship__title">Stage chez Atelier Design</h2>
         <div class="internship__container">
           <div class="internship__flex">
-            <picture class="internship__img hide">
+            <picture v-animate-parallax:[directionY]="4" data-v="0.15" class="internship__img hide">
               <nuxt-img
                 src="/about/ad.webp"
                 sizes="sm:100vw lg:100vw"
@@ -115,10 +121,30 @@ export default {
 
 <style lang="scss">
 .hero-about {
+  position: relative;
   height: 100vh;
   @extend %centerFlex;
   .hero-about__title {
-    width: 90%;
+    width: 87%;
+  }
+  &__big{
+    position: absolute;
+     font-size: 55vh;
+     color: transparent;
+      -webkit-text-stroke: 1px #f92d2d60;
+      font-family: "Mongoose";
+      text-transform: uppercase;
+      @include laptop{
+        font-size: 75vh;
+      }
+      &:first-of-type{
+        top: -12%;
+        left: -5%;
+      }
+      &:last-of-type{
+        top: 50%;
+        right: 0;
+      }
   }
   &__span {
     @include tablet {
@@ -164,8 +190,8 @@ export default {
 }
 .marquee-title{
   margin-top: 8rem;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  border-top: 1px solid #F92E2D;
+  border-bottom: 1px solid #F92E2D;
   @include phone {
     margin-top: 12rem;
   }
@@ -180,6 +206,8 @@ export default {
 }
 }
 .skills {
+    font-family: 'Poppins';
+    color: white;
   &__title {
     width: 60%;
     @include phone {
@@ -187,7 +215,7 @@ export default {
     }
   }
   &__container {
-    background-color: #D3BF04;
+    background-color: #F92E2D;
     padding: 7rem 0;
     @include phone {
       padding: 12rem 0;
@@ -267,7 +295,6 @@ export default {
 .contact{
    height: 100vh;
   @extend %centerFlex;
-  background-color: #D3BF04;
    &__container {
     p {
       text-align: center;

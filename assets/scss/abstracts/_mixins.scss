@@ -23,7 +23,7 @@
 @mixin lineAfter($h, $speed){
   &::before{
     @include after(100%, 0);
-  background-color: white;
+  background-color: #F92E2D;
   width: 100%;
   height: $h;
   transform-origin: right;

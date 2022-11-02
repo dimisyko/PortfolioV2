@@ -2,12 +2,12 @@
   <section class="error overflow-x">
     <div class="error__txt">
       <p>Page non trouvé</p>
-      <h1 class="error__title" v-if="error.statusCode === 404">
+      <h1 class="error__title title-primary" v-if="error.statusCode === 404">
         <span v-for="word in 2" :key="word" class="error__words">
           <span v-for="span in 4" :key="span">Erreur 404 -&nbsp;</span>
         </span>
       </h1>
-      <nuxt-link class="btn-back" to="/">Retour accueil</nuxt-link>
+      <nuxt-link class="btn-error" to="/">Retour accueil</nuxt-link>
     </div>
   </section>
 </template>
@@ -27,7 +27,6 @@ export default {
 <style lang="scss">
 .error {
   height: 100vh;
-  background-color: #D3BF04;
   &__txt {
     @extend %centerFlex;
     flex-direction: column;
@@ -38,7 +37,7 @@ export default {
         margin-bottom: 8vw;
       }
     }
-    .btn-back {
+    .btn-error {
       position: relative;
       margin-top: 7rem;
       &::after {

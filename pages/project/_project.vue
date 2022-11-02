@@ -3,6 +3,7 @@
     <Header />
       <Indicator/>
     <section class="hero-flexi">
+      <div class="hero-flexi__content">
         <h1 v-animate-parallax:[directionX]="6" data-v="-0.25" class="hero-flexi__title">{{project.titleProject}}</h1>
         <picture class="hero-flexi__img">
           <nuxt-img
@@ -11,6 +12,7 @@
             :alt="project.titleProject"
           />
         </picture>
+      </div>
     </section>
     <main class="site-main w-90">
       <div class="info-project">
@@ -38,7 +40,7 @@
               width="180"
               height="58"
               rx="29"
-              stroke="white"
+              stroke="#F92E2D"
               stroke-width="1.7"
             />
           </svg>
@@ -47,9 +49,9 @@
          <div v-else class="info-project__content">
          <p>{{project.detailProject.txtHero}}</p>
         </div>
-        <div class="nbr">0 {{number_project + 1}}</div>
+        <div v-animate-parallax:[directionY]="4" data-v="0.2" class="nbr-project">0 {{number_project + 1}}</div>
       </div>
-      <section class="list-imgs">
+      <div class="list-imgs">
         <picture
           v-for="(list, i) in project.detailMain"
           :key="i"
@@ -64,7 +66,7 @@
             :alt="list.altMain"
           />
         </picture>
-      </section>
+      </div>
       <section class="next-project">
         <div class="next-project__container">
           <p>Projet suivant</p>
@@ -168,16 +170,23 @@ export default {
          margin: 4vw 0 2vw 0;
     }
     }
-
-  &__title{
+  &__content{
     @extend %centerFlex;
+    flex-direction: column;
     height: 100%;
+  }
+  &__title{
     white-space: nowrap;
-    font-size: 9rem;
+    font-size: 6.8rem;
+    text-align: center;
     @include phone{
       font-size: 13rem;
     }
     @include tablet{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: auto;
       font-size: 17rem;
     }
     @include laptop{
@@ -185,12 +194,20 @@ export default {
     }
   }
   &__img{
+    width: 50%;
+    height: 55vw;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: white;
+    @include tablet{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-7deg);
-    width: 27%;
-    height: 32vw;
+    width: 25%;
+    height: 30vw;
+    padding: 15px;
+    }
   }
 }
 .info-project{
@@ -217,21 +234,19 @@ export default {
      width: 45%;
     }
   }
-  .nbr{
+  .nbr-project{
     font-size: 10rem;
      white-space: nowrap;
      color: transparent;
-      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.555);
+      -webkit-text-stroke: 1px #f92d2dba;
     @include phone{
-      font-size: 13rem;
+      font-size: 15rem;
     }
     @include tablet{
-      font-size: 17rem;
-      transform: translate(20%, -20vh);
+      font-size: 25rem;
     }
     @include laptop{
-    font-size: 35vw;
-    transform: translate(20%, -40vh);
+    font-size: 55vw;
     }
   }
 }
@@ -293,11 +308,13 @@ export default {
   &__img {
     position: absolute;
     top: 0;
-    width: 30%;
+    width: 28%;
     height: 30vw;
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
     transition: clip-path 0.7s 0.1s ease;
     pointer-events: none;
+    padding: 15px;
+    background-color: white;
   }
 }
 </style>

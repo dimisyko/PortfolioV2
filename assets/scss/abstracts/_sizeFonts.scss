@@ -1,5 +1,5 @@
-h1, h2, h3, .nbr, .project__nbr{
-    color: white;
+h1, h2, .nbr-project, .project__nbr{
+    color: #F92E2D;
     font-family: "Mongoose";
     font-weight: lighter;
     text-transform: uppercase;
@@ -24,18 +24,20 @@ h2{
     font-size: 10vw;
   }
 }
+p, .link-project, .btn-error, .project__link, .project__nbr{
+  font-family: 'Poppins';
+  color: #F92E2D;
+}
 h3, .nbr, .project__nbr{
-  font-size: 2rem;
+  font-size: 1.3rem;
   @include phone {
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
   @include laptop {
-    font-size: 3.5vw;
+    font-size: 1.8vw;
   }
 }
-p, .link-project, .btn-back, .project__link, .scroll-down, .nbr-images{
-    font-family: 'Poppins';
-    color: white;
+p, .link-project, .project__link, .btn-error{
     font-size: 1rem;
     @include laptop{
       font-size: 1.2vw;

@@ -19,7 +19,7 @@
         preserveAspectRatio="none"
         class="bg-menu-svg"
       >
-        <path class="bg-menu" fill="#D3BF04" d="M 0 0 Q 50 0 100 0 V 0 Q 50 0 0 0 Z" />
+        <path class="bg-menu" fill="#F92E2D" d="M 0 0 Q 50 0 100 0 V 0 Q 50 0 0 0 Z" />
       </svg>
       <nav class="menu__nav">
         <ul class="menu__wrapper">
@@ -105,14 +105,14 @@ export default {
   }
   &__logo{
     font-family: "Poppins";
-    color: white;
+    color: black;
     font-size: 1.1rem;
   }
   &__burger {
     position: relative;
     height: 60px;
     width: 60px;
-    border: 1px solid white;
+    border: 1px solid black;
     border-radius: 50%;
     background-color: transparent;
         &.active{
@@ -135,7 +135,7 @@ export default {
         position: absolute;
         width: 100%;
         height: 2px;
-        background-color: white;
+        background-color: black;
         transition: 0.5s;
       }
       .lineBurger:nth-child(1) {
@@ -172,7 +172,7 @@ export default {
     border-top: 1.5px solid white;
     display: flex;
     &:last-child {
-      border-bottom: 1.5px solid white;
+      border-bottom: 1.5px solid white
     }
     @include phone {
       padding: 3rem 0;
