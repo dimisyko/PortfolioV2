@@ -16,15 +16,21 @@
       <span class="hero-about__big">
           me
       </span>
+      <BtnDown/>
     </section>
     <main class="site-main">
       <section class="bio">
+        <div class="bio__content">
         <h2 v-animate-parallax:[directionY]="4" data-v="0.25" class="bio__title">Ma bio</h2>
         <p class="bio__paragraph">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
           sed rem distinctio amet ut repellendus ipsa voluptatum animi illum
           perspiciatis?
         </p>
+        </div>
+        <svg ref="svgRotate" class="svg-star" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 0L11.9211 5.36212L17.0711 2.92893L14.6379 8.07893L20 10L14.6379 11.9211L17.0711 17.0711L11.9211 14.6379L10 20L8.07893 14.6379L2.92893 17.0711L5.36212 11.9211L0 10L5.36212 8.07893L2.92893 2.92893L8.07893 5.36212L10 0Z" fill="#F92E2D"/>
+        </svg>
       </section>
       <section class="skills marquee-title">
         <h2
@@ -106,6 +112,7 @@ export default {
     return {
       directionX: "translateX",
       directionY: "translateY",
+      svgAnim : undefined
     };
   },
   asyncData({ params }) {
@@ -116,6 +123,18 @@ export default {
       title: "A propos - Portfolio",
     };
   },
+  mounted(){
+    this.svgRotate()
+  },
+  beforeDestroy(){
+    cancelAnimationFrame(this.svgAnim)
+  },
+  methods:{
+    svgRotate(){
+      this.$refs.svgRotate.style.transform = "rotate("+window.pageYOffset / 7+"deg)"
+      this.svgAnim = requestAnimationFrame(this.svgRotate)
+    }
+  }
 };
 </script>
 
@@ -131,7 +150,7 @@ export default {
     position: absolute;
      font-size: 55vh;
      color: transparent;
-      -webkit-text-stroke: 1px #f92d2d60;
+      -webkit-text-stroke: 1px #f92d2d7b;
       font-family: "Mongoose";
       text-transform: uppercase;
       @include laptop{
@@ -168,11 +187,15 @@ export default {
     margin-bottom: 25rem;
   }
   @include tablet {
+     width: 70%;
+    margin: 12% auto;
+  }
+  &__content{
+    @include  tablet{
     display: flex;
     justify-content: space-between;
     align-items: center;
-     width: 70%;
-    margin: 12% auto 20% auto;
+    }
   }
   &__title {
     margin-bottom: 1.5rem;
@@ -186,6 +209,10 @@ export default {
     @include tablet {
       width: 40%;
     }
+  }
+  .svg-star{
+    width: 50px;
+    margin: 10rem auto;
   }
 }
 .marquee-title{

@@ -1,8 +1,8 @@
 <template>
     <h1 :class="`title ${classNameTitle}`">
-      <span :class="`${classNameSpan} hide`" v-for="(letter, i) in tab" :key="i" 
+      <span :class="`${classNameSpan}`" v-for="(letter, i) in tab" :key="i" 
       v-animate-parallax:[directionX]="4" :data-v="`${i % 2 === 0 ? data_left : data_right}`">
-        <span class="stagger">{{letter}}</span>
+        {{letter}}
       </span>
     </h1>
 </template>

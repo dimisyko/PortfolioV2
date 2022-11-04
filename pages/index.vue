@@ -1,9 +1,9 @@
 <template>
-  <div class="overflow-x overflow">
+  <div class="overflow">
     <Header />
     <section class="home w-90">
       <div class="home__txt">
-        <CutTitle classNameTitle="home__title title-primary" classNameSpan="home__split" data_left="0" data_right="0" value="Front-end dev.  web designer"/>
+        <h1 class="home__title title-primary">Front-end dev. web designer</h1>
         <nuxt-link class="link-projects" to="/works"
           ><span class="link"> Voir mes<br />projets </span>
           <span class="home__btn"><svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@ export default {
     getYear(){
       return this.year.getFullYear()
     }
-  },
+  }
 };
 </script>
 
@@ -71,9 +71,17 @@ export default {
   }
   &__title {
     text-align: center;
+      width: 20rem;
+    @include phone{
+      width: 28rem;
+    }
+    @include tablet{
+      width: 32rem;
+    }
     @include laptop {
       text-align: left;
       align-self: flex-start;
+      width: 60%;
     }
   }
   .link-projects {

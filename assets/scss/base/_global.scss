@@ -5,7 +5,7 @@ body{
   background-color: #F6EEE3;
 }
 ::selection{
-  background-color: #df603c;
+  background-color: black
 }
 ::-webkit-scrollbar{
   display: none;
@@ -47,6 +47,7 @@ body{
   left: 0;
   width: 100%;
   height: 100%;
+  z-index : 999
 }
 .hide{
   overflow: hidden;

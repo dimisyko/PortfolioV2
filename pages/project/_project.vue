@@ -2,6 +2,7 @@
   <div class="overflow-x">
     <Header />
       <Indicator/>
+      <nuxt-link to="/works" class="btn-back">Retour</nuxt-link>
     <section class="hero-flexi">
       <div class="hero-flexi__content">
         <h1 v-animate-parallax:[directionX]="6" data-v="-0.25" class="hero-flexi__title">{{project.titleProject}}</h1>
@@ -13,10 +14,12 @@
           />
         </picture>
       </div>
+      <BtnDown/>
     </section>
     <main class="site-main w-90">
       <div class="info-project">
         <div v-if="project.detailProject.linkProject" class="info-project__content">
+          <h2>{{project.titleProject}}</h2>
        <p>{{project.detailProject.txtHero}}</p>
         <a
           class="link-project"
@@ -40,7 +43,7 @@
               width="180"
               height="58"
               rx="29"
-              stroke="#F92E2D"
+              stroke="black"
               stroke-width="1.7"
             />
           </svg>
@@ -63,7 +66,7 @@
             sizes="sm:70vw md:100vw lg:100vw"
             data-v="-0.16"
             class="parallax"
-            :alt="list.altMain"
+            :alt="list.altListImg"
           />
         </picture>
       </div>
@@ -158,6 +161,19 @@ export default {
 </script>
 
 <style lang="scss">
+.btn-back{
+  position: fixed;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-7deg);
+  z-index: 9;
+  font-size: 2rem;
+  letter-spacing: 0.08rem;
+  @include lineAfter(2px, transform 0.7s cubic-bezier(0.87, 0, 0.12, 1));
+  @include phone{
+    top: 5%;
+  }
+}
 .hero-flexi {
   position: relative;
   height: 100vh;

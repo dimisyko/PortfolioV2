@@ -107,6 +107,10 @@ export default {
     font-family: "Poppins";
     color: black;
     font-size: 1.1rem;
+    width: 30%;
+    @include phone{
+      width: fit-content
+    }
   }
   &__burger {
     position: relative;

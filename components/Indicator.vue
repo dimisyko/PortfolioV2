@@ -34,7 +34,7 @@ export default {
         height: 100vh;
         width: 5px;
         right: 0;
-        background-color: white;
+        background-color: #F92E2D;
         z-index: 1;
         transform: translate3d(0, -100%, 0);
     }
