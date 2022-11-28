@@ -95,7 +95,7 @@
       <section class="contact">
         <div class="contact__container w-90">
             <p>Clique sur l'adresse mail pour me contacter</p>
-            <a href="mailto:dimitri.syko@hotmail.com">
+            <a class="mail" href="mailto:dimitri.syko@hotmail.com">
                <Marquee value="Dimitri.syko@hotmail.com"/>
             </a>
         </div>

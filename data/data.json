@@ -5,30 +5,29 @@
       "imgProject": "/works/grandPlace-visit.webp",
       "url": "bruvisite",
       "detailProject": {
-        "imgHero": "/works/detail/grandPlace-detail.webp",
         "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
         "techno" : "Projet réalisé avec : Vue.js / Nuxt.js",
         "linkProject" : "https://bruvisite.netlify.app"
       },
       "detailMain": [
         {
-          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "imgMain": "/works/detail/bruvisite1.jpg",
           "altListImg": "Img"
         },
         {
-          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "imgMain": "/works/detail/bruvisite2.jpg",
           "altListImg": "Img"
         },
         {
-          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "imgMain": "/works/detail/bruvisite3.jpg",
           "altListImg": "Img"
         },
         {
-          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "imgMain": "/works/detail/bruvisite4.jpg",
           "altListImg": "Img"
         },
         {
-          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "imgMain": "/works/detail/bruvisite5.jpg",
           "altListImg": "Img"
         }
       ]
@@ -38,35 +37,159 @@
       "imgProject": "/works/crush.webp",
       "url": "design-museum",
       "detailProject": {
-        "imgHero": "/works/detail/design_museum.webp",
         "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
         "techno" : "Projet réalisé en : Html / Scss / Bootstrap et Javascript",
         "linkProject": "https://design-museum.netlify.app/"
       },
       "detailMain": [
         {
-          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "imgMain": "/works/crush.webp",
           "altListImg": "Img"
         },
         {
-          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "imgMain": "/works/crush.webp",
           "altListImg": "Img"
         },
         {
-          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "imgMain": "/works/crush.webp",
           "altListImg": "Img"
         },
         {
-          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "imgMain": "/works/crush.webp",
           "altListImg": "Img"
         },
         {
-          "imgMain": "/works/detail/grandPlace-detail.webp",
+          "imgMain": "/works/crush.webp",
+          "altListImg": "Img"
+        }
+      ]
+    },
+    {
+      "titleProject": "Bxl dance",
+      "imgProject": "/works/brussels_dance.webp",
+      "url": "bxl-dance",
+      "detailProject": {
+        "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
+        "techno" : "Projet réalisé en : Html / Scss / Bootstrap et Javascript"
+      },
+      "detailMain": [
+        {
+          "imgMain": "/works/brussels_dance.webp",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/brussels_dance.webp",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/brussels_dance.webp",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/brussels_dance.webp",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/brussels_dance.webp",
+          "altListImg": "Img"
+        }
+      ]
+    },
+    {
+      "titleProject": "Street Law",
+      "imgProject": "/works/street_law.webp",
+      "url": "street-law",
+      "detailProject": {
+        "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
+        "techno" : "Projet réalisé en : Html / Scss / Bootstrap et Javascript",
+        "linkProject" : "https://streetlawclinic.ulb.be"
+      },
+      "detailMain": [
+        {
+          "imgMain": "/works/detail/street_law.jpg",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/detail/street_law.jpg",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/detail/street_law.jpg",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/detail/street_law.jpg",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/detail/street_law.jpg",
+          "altListImg": "Img"
+        }
+      ]
+    },
+    {
+      "titleProject": "Strange fruit",
+      "imgProject": "/works/stange_fruit.webp",
+      "url": "strange-fruit",
+      "detailProject": {
+        "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
+        "techno" : "Projet réalisé en : Html / Scss / Bootstrap et Javascript"
+      },
+      "detailMain": [
+        {
+          "imgMain": "/works/stange_fruit.webp",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/stange_fruit.webp",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/stange_fruit.webp",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/stange_fruit.webp",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/stange_fruit.webp",
+          "altListImg": "Img"
+        }
+      ]
+    },
+    {
+      "titleProject": "Riot skate",
+      "imgProject": "/works/riot.webp",
+      "url": "riot-skate",
+      "detailProject": {
+        "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
+        "techno" : "Projet réalisé en : Html / Scss / Bootstrap et Javascript"
+      },
+      "detailMain": [
+        {
+          "imgMain": "/works/riot.webp",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/riot.webp",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/riot.webp",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/riot.webp",
+          "altListImg": "Img"
+        },
+        {
+          "imgMain": "/works/riot.webp",
           "altListImg": "Img"
         }
       ]
     }
   ],
-  "aboutPageSkills": ["Html / Pug", "Css / Scss", "Js ( vanilla )", "Wordpress / Php", "Vue.js / Nuxt.js", "GitHub", "Photoshop / Illustrator / Figma", "Node.js / Express.js ( en cours )"]
+  "aboutPageSkills": ["Html / Pug", "Css / Scss", "Js ( vanilla ) / Vue.js / Nuxt.js", "Wordpress / Php", "Webpack", "GitHub", "Photoshop / Illustrator / Figma", "Node.js / Express.js ( en cours )"]
   
 }

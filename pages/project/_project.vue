@@ -8,7 +8,7 @@
         <h1 v-animate-parallax:[directionX]="6" data-v="-0.25" class="hero-flexi__title">{{project.titleProject}}</h1>
         <picture class="hero-flexi__img">
           <nuxt-img
-            :src="project.detailProject.imgHero"
+            :src="project.imgProject"
             sizes="sm:70vw md:100vw lg:100vw"
             :alt="project.titleProject"
           />
@@ -50,25 +50,17 @@
         </a>
         </div>
          <div v-else class="info-project__content">
+          <h2>{{project.titleProject}}</h2>
          <p>{{project.detailProject.txtHero}}</p>
         </div>
         <div v-animate-parallax:[directionY]="4" data-v="0.2" class="nbr-project">0 {{number_project + 1}}</div>
       </div>
       <div class="list-imgs">
-        <picture
-          v-for="(list, i) in project.detailMain"
+        <div class="list-imgs__project"
+         v-for="(list, i) in project.detailMain"
           :key="i"
-          class="list-imgs__project hide"
-        >
-          <nuxt-img
-            v-animate-parallax:[directionY]="6"
-            :src="list.imgMain"
-            sizes="sm:70vw md:100vw lg:100vw"
-            data-v="-0.16"
-            class="parallax"
-            :alt="list.altListImg"
-          />
-        </picture>
+          :style="{'background-image':`url(..${list.imgMain})`}"
+        ></div>
       </div>
       <section class="next-project">
         <div class="next-project__container">
@@ -86,7 +78,7 @@
           </nuxt-link>
             <picture class="next-project__img" ref="img">
             <nuxt-img
-              :src="data.projectsPage[nextProject(number_project + 1)].detailProject.imgHero"
+              :src="data.projectsPage[nextProject(number_project + 1)].imgProject"
               sizes="sm:70vw md:100vw lg:100vw"
               :alt="data.projectsPage[nextProject(number_project + 1)].titleProject"/>
           </picture>
@@ -193,10 +185,10 @@ export default {
   }
   &__title{
     white-space: nowrap;
-    font-size: 6.8rem;
+    font-size: 6rem;
     text-align: center;
     @include phone{
-      font-size: 13rem;
+      font-size: 12rem;
     }
     @include tablet{
     display: flex;
@@ -267,36 +259,20 @@ export default {
   }
 }
 .list-imgs {
-  margin: 12rem 0 10rem 0;
-  display: grid;
-  @include tablet {
-    margin: 15rem 0;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(11, 1fr);
-  }
-  &__project {
-    margin-bottom: 3rem;
-    @extend %centerFlex;
-    @include phone {
-      margin-bottom: 6rem;
+  margin: 15rem auto 10rem auto;
+  width: 100%;
+  @include laptop{
+      margin: 30rem auto 0 auto;
     }
-    @include tablet {
-      margin-bottom: 0rem;
-      &:first-child {
-        grid-area: 1/1/4/7;
-      }
-      &:nth-child(2) {
-        grid-area: 3/8/5/13;
-      }
-      &:nth-child(3) {
-        grid-area: 6/5/9/12;
-      }
-      &:nth-child(4) {
-        grid-area: 10/1/12/5;
-      }
-      &:nth-child(5) {
-        grid-area: 10/6/12/10;
-      }
+  &__project {
+    margin: 7rem 0;
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 90%;
+    background-position: center;
+    @include tablet{
+      background-size: 65%;
     }
   }
 }

@@ -37,6 +37,18 @@
     }
   }
 }
+%hoverLink {
+  &::after{
+    content: attr(data-txt);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    color: white;
+    transition: width 0.7s;
+  }
+}
 @mixin svgHover($stroke){
   &:hover {
     svg {
@@ -53,7 +65,7 @@
       transition: 1s ease;
     }
     &:last-child {
-      opacity: 0.5;
+      opacity: 0.4;
     }
   }
 }

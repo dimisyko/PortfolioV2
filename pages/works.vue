@@ -8,7 +8,7 @@
       <section class="project" v-for="(project, index) in works.projectsPage" :key="index">
         <nuxt-link 
         :class="`project__link ${index % 2 === 0 ? `odd` : `even`}`" :to="`project/${project.url}`">
-          <h2 class="project__title">{{project.titleProject}}</h2>
+          <h2 :data-txt="project.titleProject" class="project__title">{{project.titleProject}}</h2>
           <picture class="project__img">
             <nuxt-img :src="project.imgProject" :alt="project.titleProject"/>
           </picture>    
@@ -67,11 +67,7 @@ export default {
       font-size: 20rem;
     }
     @include tablet{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    height: auto;
-      font-size: 17rem;
+    font-size: 17rem;
     }
     @include laptop{
     font-size: 28vw;
@@ -85,32 +81,43 @@ export default {
   width: 100%;
   @extend %centerFlex;
   @include tablet{
-    width: 70%;
+    width: 60%;
   }
 &__link{
   position: relative;
   width: 60%;
   height: 75vw;
  margin: 2rem 0;
+ h2{
+   color: transparent;
+  -webkit-text-stroke: 1.5px white;
+    @extend %hoverLink;
+ }
+  &:hover{
+    h2{
+      &::after{
+       width: 0%;
+      }
+    }
+    }
  @include phone{
    height: 65vw; 
  }
   @include tablet{
-    width: 41%;
+    width: 45%;
     height: 33vw;
   }
 }
 .even{
-  transform: rotate(7deg)
+  transform: rotate(8deg)
 }
 .odd{
-  transform: rotate(-7deg)
+  transform: rotate(-8deg)
 }
 &__title{
   @include centerObs(absolute, 50%, 50%, -50%, -50%);
   z-index: 2;
-  line-height: 0.8;
-  color: white;
+  line-height: 0.9;
 }
  &__img{
   position: relative;
@@ -119,7 +126,7 @@ export default {
     @include after(0, 0);
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.261);
     z-index: 1;
     }
     &::before{
@@ -129,7 +136,7 @@ export default {
     z-index: -1;
     background-color: white;
     transform: translate(-50%, -50%);
-    padding: 15px;
+    padding: 14px;
     }
  }
 }

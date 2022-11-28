@@ -36,6 +36,5 @@ export default {
         right: 0;
         background-color: #F92E2D;
         z-index: 1;
-        transform: translate3d(0, -100%, 0);
     }
 </style>

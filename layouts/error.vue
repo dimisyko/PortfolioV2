@@ -40,11 +40,6 @@ export default {
     .btn-error {
       position: relative;
       margin-top: 7rem;
-      &::after {
-        content: "↗";
-        display: inline-block;
-        transform: translateX(5px);
-      }
       @include laptop {
         margin-top: 8vw;
       }

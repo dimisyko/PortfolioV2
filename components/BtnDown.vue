@@ -23,7 +23,7 @@ export default {
       this.interval = setInterval(() => {
         if (document.documentElement.scrollTop <= window.innerHeight) {
           speed +=
-            (window.innerHeight - document.documentElement.scrollTop) / 10;
+            (window.innerHeight - document.documentElement.scrollTop) / 12;
           document.documentElement.scrollTop = speed
         }
       }, 15);

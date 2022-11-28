@@ -210,15 +210,7 @@ export default {
           width: 0;
         }
     }
-     &::after{
-        content: attr(data-txt);
-        position: absolute;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        color: white;
-        transition: width 0.7s;
-      }
+        @extend %hoverLink;
         &:hover{
           &::after{
            width: 0%;
