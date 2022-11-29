@@ -43,23 +43,23 @@
       },
       "detailMain": [
         {
-          "imgMain": "/works/crush.webp",
+          "imgMain": "/works/detail/design_museum1.jpg",
           "altListImg": "Img"
         },
         {
-          "imgMain": "/works/crush.webp",
+          "imgMain": "/works/detail/design_museum2.jpg",
           "altListImg": "Img"
         },
         {
-          "imgMain": "/works/crush.webp",
+          "imgMain": "/works/detail/design_museum3.jpg",
           "altListImg": "Img"
         },
         {
-          "imgMain": "/works/crush.webp",
+          "imgMain": "/works/detail/design_museum4.jpg",
           "altListImg": "Img"
         },
         {
-          "imgMain": "/works/crush.webp",
+          "imgMain": "/works/detail/design_museum5.jpg",
           "altListImg": "Img"
         }
       ]
@@ -70,7 +70,7 @@
       "url": "bxl-dance",
       "detailProject": {
         "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
-        "techno" : "Projet réalisé en : Html / Scss / Bootstrap et Javascript"
+        "techno" : "Projet réalisé avec : Adobe xd"
       },
       "detailMain": [
         {
@@ -101,7 +101,7 @@
       "url": "street-law",
       "detailProject": {
         "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
-        "techno" : "Projet réalisé en : Html / Scss / Bootstrap et Javascript",
+        "techno" : "Projet réalisé avec : Wordpress / Scss et Javascript",
         "linkProject" : "https://streetlawclinic.ulb.be"
       },
       "detailMain": [
@@ -133,7 +133,7 @@
       "url": "strange-fruit",
       "detailProject": {
         "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
-        "techno" : "Projet réalisé en : Html / Scss / Bootstrap et Javascript"
+        "techno" : "Projet réalisé avec : Photoshop"
       },
       "detailMain": [
         {
@@ -164,7 +164,7 @@
       "url": "riot-skate",
       "detailProject": {
         "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
-        "techno" : "Projet réalisé en : Html / Scss / Bootstrap et Javascript"
+        "techno" : "Projet réalisé avec : Illustrator et Photoshop"
       },
       "detailMain": [
         {

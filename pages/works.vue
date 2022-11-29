@@ -3,7 +3,7 @@
     <Header />
       <Indicator/>
       <main class="site-main container-height" ref="containerHeight">
-        <div class="container-project" ref="container">
+        <div class="container-project hide" ref="container">
           <h1 class="container-project__title">Mes travaux réalisés de 2020 - 2022</h1>
       <section class="project" v-for="(project, index) in works.projectsPage" :key="index">
         <nuxt-link 
@@ -58,7 +58,6 @@ export default {
   position: sticky;
   top: 0;
   display: flex;
-  overflow: hidden;
   &__title{
    @include centerObs(absolute, 50%, 50%, 0%, -50%);
    white-space: nowrap;
@@ -136,7 +135,10 @@ export default {
     z-index: -1;
     background-color: white;
     transform: translate(-50%, -50%);
-    padding: 14px;
+    padding: 10px;
+      @include tablet{
+    padding: 15px;
+      }
     }
  }
 }

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="nuxtContent">
      <div class="bg-transition">
       <svg
         viewBox="0 0 100 100"
