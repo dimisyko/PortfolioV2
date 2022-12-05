@@ -23,9 +23,8 @@
         <div class="bio__content">
         <h2 v-animate-parallax:[directionY]="4" data-v="0.25" class="bio__title">Ma bio</h2>
         <p class="bio__paragraph">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
-          sed rem distinctio amet ut repellendus ipsa voluptatum animi illum
-          perspiciatis?
+          Front-end developpeur junior et web designer de 23 ans fraichement diplomé d'un bachelier en haute école avec une mention distinction depuis septembre 2022.
+          Principalement orienté front-end, j'ai de bonnes connaissances dans les technologies modernes du web comme Vue.js / Nuxt.js ainsi que le CMS Wordpress.
         </p>
         </div>
         <svg ref="svgRotate" class="svg-star" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,10 +65,8 @@
                 alt="Atelier Design"
               />
             </picture>
-            <p class="internship__paragaph">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum
-              culpa error perferendis pariatur, perspiciatis inventore doloribus
-              maxime earum rerum tempore.
+            <p class="internship__paragraph">
+              Dans le cadre de ma 3eme année, j’ai effectué un stage d’une durée de quinze semaines au sein de l’agence Atelier design en tant que développeur web. Il m'a permis d'approfondire mes connaissances dans le CMS Wordpress et le language Javascript.
             </p>
           </div>
           <picture class="internship__img hide">
@@ -180,11 +177,10 @@ export default {
   }
 }
 .bio {
-  margin-bottom: 10rem;
   width: 90%;
-  margin: auto;
+  margin: 10rem auto;
   @include phone {
-    margin-bottom: 25rem;
+   margin: 20rem auto;
   }
   @include tablet {
      width: 70%;
@@ -207,7 +203,7 @@ export default {
   }
   &__paragraph {
     @include tablet {
-      width: 40%;
+      width: 42%;
     }
   }
   .svg-star{
@@ -307,15 +303,15 @@ export default {
       flex-direction: row;
     }
   }
-  &__paragaph {
+  &__paragraph {
     width: 100%;
-    margin: 3rem 0;
+    margin: 4rem 0;
     @include phone{
-     margin: 5rem 0; 
+     margin: 5.5rem 0; 
     }
     @include tablet {
       width: 30%;
-      margin: 8% 0 0 10%; 
+      margin: 5% 0 0 10%; 
     }
   }
 }

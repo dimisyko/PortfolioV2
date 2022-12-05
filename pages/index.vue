@@ -87,7 +87,6 @@ export default {
   .link-projects {
     color: #F92E2D;
     font-family: "Poppins";
-    text-transform: uppercase;
     margin-top: 2.5rem;
     font-size: 1.3rem;
     display: flex;
@@ -98,7 +97,7 @@ export default {
       border-radius: 50vw;
       height: 50px;
       padding: 10px;
-      margin-left: 15px;
+      margin-left: 10px;
       align-self: flex-end;
     }
     @include laptop {

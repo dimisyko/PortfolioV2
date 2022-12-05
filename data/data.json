@@ -5,30 +5,30 @@
       "imgProject": "/works/grandPlace-visit.webp",
       "url": "bruvisite",
       "detailProject": {
-        "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
-        "techno" : "Projet réalisé avec : Vue.js / Nuxt.js",
-        "linkProject" : "https://bruvisite.netlify.app"
+        "txtHero": "Refonte du site Visite.brussels dans le cadre du travail de fin d'études. Ce site permet de montrer ce que l'on peut faire à Bruxelles. ( Mention grande distinction )",
+        "techno" : "Projet réalisé avec : Vue.js / Nuxt.js et GSAP",
+        "linkProject" : "https://bruvisite-tfe.netlify.app"
       },
       "detailMain": [
         {
           "imgMain": "/works/detail/bruvisite1.jpg",
-          "altListImg": "Img"
+          "altListImg": "bruvisite accueil"
         },
         {
           "imgMain": "/works/detail/bruvisite2.jpg",
-          "altListImg": "Img"
+          "altListImg": "bruvisite menu"
         },
         {
           "imgMain": "/works/detail/bruvisite3.jpg",
-          "altListImg": "Img"
+          "altListImg": "bruvisite top 5 visite"
         },
         {
           "imgMain": "/works/detail/bruvisite4.jpg",
-          "altListImg": "Img"
+          "altListImg": "bruvisite contact"
         },
         {
           "imgMain": "/works/detail/bruvisite5.jpg",
-          "altListImg": "Img"
+          "altListImg": "bruvisite palais royal"
         }
       ]
     },
@@ -37,61 +37,30 @@
       "imgProject": "/works/crush.webp",
       "url": "design-museum",
       "detailProject": {
-        "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
-        "techno" : "Projet réalisé en : Html / Scss / Bootstrap et Javascript",
+        "txtHero": "Sur base d'une exposition à visiter, j'ai crée l'identité graphique complète de l'exposition ainsi que la réalisation du site web.",
+        "techno" : "Projet réalisé en : Html / Scss / Bootstrap et Javascript ( Vanilla et GSAP )",
         "linkProject": "https://design-museum.netlify.app/"
       },
       "detailMain": [
         {
           "imgMain": "/works/detail/design_museum1.jpg",
-          "altListImg": "Img"
+          "altListImg": "design museum accueil"
         },
         {
           "imgMain": "/works/detail/design_museum2.jpg",
-          "altListImg": "Img"
+          "altListImg": "design museum contact"
         },
         {
           "imgMain": "/works/detail/design_museum3.jpg",
-          "altListImg": "Img"
+          "altListImg": "design museum jeu concours"
         },
         {
           "imgMain": "/works/detail/design_museum4.jpg",
-          "altListImg": "Img"
+          "altListImg": "design museum exposition"
         },
         {
           "imgMain": "/works/detail/design_museum5.jpg",
-          "altListImg": "Img"
-        }
-      ]
-    },
-    {
-      "titleProject": "Bxl dance",
-      "imgProject": "/works/brussels_dance.webp",
-      "url": "bxl-dance",
-      "detailProject": {
-        "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
-        "techno" : "Projet réalisé avec : Adobe xd"
-      },
-      "detailMain": [
-        {
-          "imgMain": "/works/brussels_dance.webp",
-          "altListImg": "Img"
-        },
-        {
-          "imgMain": "/works/brussels_dance.webp",
-          "altListImg": "Img"
-        },
-        {
-          "imgMain": "/works/brussels_dance.webp",
-          "altListImg": "Img"
-        },
-        {
-          "imgMain": "/works/brussels_dance.webp",
-          "altListImg": "Img"
-        },
-        {
-          "imgMain": "/works/brussels_dance.webp",
-          "altListImg": "Img"
+          "altListImg": "design museum exposition crush"
         }
       ]
     },
@@ -100,92 +69,93 @@
       "imgProject": "/works/street_law.webp",
       "url": "street-law",
       "detailProject": {
-        "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
+        "txtHero": "Durant mon stage à l'agence Atelier design, j'ai codé le site web Clinic Street Law en me basant sur la maquette réalisée par l'équipe des UX/UI.",
         "techno" : "Projet réalisé avec : Wordpress / Scss et Javascript",
         "linkProject" : "https://streetlawclinic.ulb.be"
       },
       "detailMain": [
         {
-          "imgMain": "/works/detail/street_law.jpg",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/street_law1.jpg",
+          "altListImg": "street law accueil"
         },
         {
-          "imgMain": "/works/detail/street_law.jpg",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/street_law2.jpg",
+          "altListImg": "street law temoignages"
         },
         {
-          "imgMain": "/works/detail/street_law.jpg",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/street_law3.jpg",
+          "altListImg": "street law publications"
         },
         {
-          "imgMain": "/works/detail/street_law.jpg",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/street_law4.jpg",
+          "altListImg": "street law informations"
         },
         {
-          "imgMain": "/works/detail/street_law.jpg",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/street_law5.jpg",
+          "altListImg": "street law lexique"
         }
       ]
     },
     {
-      "titleProject": "Strange fruit",
-      "imgProject": "/works/stange_fruit.webp",
-      "url": "strange-fruit",
+      "titleProject": "Bxl dance",
+      "imgProject": "/works/brussels_dance.webp",
+      "url": "bxl-dance",
       "detailProject": {
-        "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
-        "techno" : "Projet réalisé avec : Photoshop"
+        "txtHero": "Réalisation de l'identité graphique complète et le design du site web du festival Brussels Dance.",
+        "techno" : "Projet réalisé avec : Adobe xd"
       },
       "detailMain": [
         {
-          "imgMain": "/works/stange_fruit.webp",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/brussels_dance1.jpg",
+          "altListImg": "bxl dance menu"
         },
         {
-          "imgMain": "/works/stange_fruit.webp",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/brussels_dance2.jpg",
+          "altListImg": "bxl dance programme"
         },
         {
-          "imgMain": "/works/stange_fruit.webp",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/brussels_dance3.jpg",
+          "altListImg": "bxl dance artistes"
         },
         {
-          "imgMain": "/works/stange_fruit.webp",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/brussels_dance4.jpg",
+          "altListImg": "bxl dance agenda"
         },
         {
-          "imgMain": "/works/stange_fruit.webp",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/brussels_dance5.jpg",
+          "altListImg": "bxl dance lieux"
         }
       ]
     },
     {
-      "titleProject": "Riot skate",
-      "imgProject": "/works/riot.webp",
-      "url": "riot-skate",
+      "titleProject": "Imag'in",
+      "imgProject": "/works/imagin.webp",
+      "url": "imagin",
       "detailProject": {
-        "txtHero": "Création de la maquette du site BEF-XL. Plateforme de partage d’activités réalisées au sein de la haute école Francisco Ferrer de la Ville de Bruxelles.",
-        "techno" : "Projet réalisé avec : Illustrator et Photoshop"
+        "txtHero": "Création de la maquette du site Imag'in qui est une plateforme de partage d’activités réalisées au sein de la Haute Ecole Francisco Ferrer de la Ville de Bruxelles.",
+        "techno" : "Projet réalisé avec : Adobe xd et illustrator",
+        "linkProject" : "https://xd.adobe.com/view/37c0c346-384b-4942-ad5f-f2545ba70631-6293/"
       },
       "detailMain": [
         {
-          "imgMain": "/works/riot.webp",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/imagin1.jpg",
+          "altListImg": "imag'in accueil"
         },
         {
-          "imgMain": "/works/riot.webp",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/imagin2.jpg",
+          "altListImg": "imag'in connexion"
         },
         {
-          "imgMain": "/works/riot.webp",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/imagin3.jpg",
+          "altListImg": "imag'in videos"
         },
         {
-          "imgMain": "/works/riot.webp",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/imagin4.jpg",
+          "altListImg": "imag'in conference"
         },
         {
-          "imgMain": "/works/riot.webp",
-          "altListImg": "Img"
+          "imgMain": "/works/detail/imagin5.jpg",
+          "altListImg": "imag'in contact"
         }
       ]
     }

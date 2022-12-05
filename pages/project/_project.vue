@@ -11,6 +11,7 @@
           class="hero-flexi__title"
         >
           {{ project.titleProject }}
+          <div class="nbr-title">({{ number_project + 1}})</div>
         </h1>
         <picture class="hero-flexi__img">
           <nuxt-img
@@ -53,7 +54,7 @@
                 width="180"
                 height="58"
                 rx="29"
-                stroke="black"
+                stroke="red"
                 stroke-width="1.7"
               />
             </svg>
@@ -65,7 +66,7 @@
           <p>{{project.detailProject.techno}}</p>
         </div>
         <div
-          v-animate-parallax:[directionY]="4"
+          v-animate-parallax:[directionY]="7"
           data-v="0.25"
           class="nbr-project"
         >
@@ -222,9 +223,26 @@ export default {
     height: 100%;
   }
   &__title {
+    position: relative;
     white-space: nowrap;
     font-size: 6rem;
     text-align: center;
+    .nbr-title{
+      position: absolute;
+      top: 0;
+      left: -1.8rem;
+      font-size: 1.7rem;
+      @include phone{
+        top: 0;
+        left: -3.5rem;
+        font-size: 2.7rem;
+      }
+      @include tablet{
+        top: 2.5vw;
+        left: -3.5vw;
+       font-size: 3vw;
+      }
+    }
     @include phone {
       font-size: 12rem;
     }
@@ -270,6 +288,8 @@ export default {
       position: relative;
       width: fit-content;
       padding: 17px;
+      white-space: nowrap;
+      color: red;
       @include svgHover(460);
     }
     p {
@@ -315,7 +335,8 @@ export default {
       margin: 7rem 0;
       @include tablet {
         flex-shrink: 0;
-        width: 55%;
+        width: 58%;
+        height: 33vw;
         margin: 0 12rem;
       }
     }
