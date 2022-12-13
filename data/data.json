@@ -38,7 +38,7 @@
       "url": "design-museum",
       "detailProject": {
         "txtHero": "Sur base d'une exposition à visiter, j'ai crée l'identité graphique complète de l'exposition ainsi que la réalisation du site web.",
-        "techno" : "Projet réalisé en : Html / Scss / Bootstrap et Javascript ( Vanilla et GSAP )",
+        "techno" : "Projet réalisé en : Html / Scss / Bootstrap / Webpack et Javascript ( Vanilla et GSAP )",
         "linkProject": "https://design-museum.netlify.app/"
       },
       "detailMain": [

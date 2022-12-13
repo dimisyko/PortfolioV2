@@ -23,7 +23,7 @@
         <div class="bio__content">
         <h2 v-animate-parallax:[directionY]="4" data-v="0.25" class="bio__title">Ma bio</h2>
         <p class="bio__paragraph">
-          Front-end developpeur junior et web designer de 23 ans fraichement diplomé d'un bachelier en haute école avec une mention distinction depuis septembre 2022.
+          Front-end developpeur junior et web designer de 23 ans fraichement diplomé d'un bachelier en haute école depuis septembre 2022 avec une mention distinction.
           Principalement orienté front-end, j'ai de bonnes connaissances dans les technologies modernes du web comme Vue.js / Nuxt.js ainsi que le CMS Wordpress.
         </p>
         </div>

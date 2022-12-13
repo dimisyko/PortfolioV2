@@ -11,7 +11,7 @@
           class="hero-flexi__title"
         >
           {{ project.titleProject }}
-          <div class="nbr-title">({{ number_project + 1}})</div>
+          <span class="nbr-title">({{ number_project + 1}})</span>
         </h1>
         <picture class="hero-flexi__img">
           <nuxt-img

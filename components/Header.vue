@@ -129,12 +129,16 @@ export default {
               .lineBurger:nth-child(3) {
                 transform:translate(0px, -8px) rotate(45deg);
               }
-        }
+    }
+    &:hover{
+        transform: rotate(180deg);
+        transition: 0.4s ease;
+    }
     .wrapper-line {
       height: 28%;
       width: 45%;
       pointer-events: none;
-      @include centerObs(absolute,50%, 50%, -50%, -50%);
+      @include centerObs(absolute,50%, 50%, -50%, -55%);
       .lineBurger {
         position: absolute;
         width: 100%;

@@ -85,12 +85,15 @@ export default {
     }
   }
   .link-projects {
+    position: relative;
     color: #F92E2D;
     font-family: "Poppins";
     margin-top: 2.5rem;
+    padding-bottom: 1rem;
     font-size: 1.3rem;
     display: flex;
     line-height: 1;
+    @include lineAfter(1.5px, transform 0.5s);
     .home__btn{
       width: 50px;
       border: 1px solid #F92E2D;
