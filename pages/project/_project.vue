@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content">
     <Header />
     <Indicator />
     <nuxt-link to="/works" class="btn-back">Retour</nuxt-link>

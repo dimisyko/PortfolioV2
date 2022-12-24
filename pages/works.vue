@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content">
     <Header />
       <Indicator/>
       <main class="site-main container-height" ref="containerHeight">

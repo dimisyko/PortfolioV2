@@ -7,7 +7,7 @@
       "detailProject": {
         "txtHero": "Refonte du site Visite.brussels dans le cadre du travail de fin d'études. Ce site permet de montrer ce que l'on peut faire à Bruxelles. ( Mention grande distinction )",
         "techno" : "Projet réalisé avec : Vue.js / Nuxt.js et GSAP",
-        "linkProject" : "https://bruvisite-tfe.netlify.app"
+        "linkProject" : "https://bruvisite.netlify.app"
       },
       "detailMain": [
         {

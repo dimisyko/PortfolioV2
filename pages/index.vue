@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow">
+  <div class="content overflow">
     <Header />
     <section class="home w-90">
       <div class="home__txt">
@@ -26,7 +26,7 @@ export default {
   },
   head() {
     return {
-      title: "Sykovaris Dimitrios - Portfolio",
+      title: "Dimitrios Sykovaris - Portfolio",
     };
   },
   computed:{

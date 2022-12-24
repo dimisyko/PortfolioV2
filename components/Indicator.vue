@@ -1,5 +1,5 @@
 <template>
-    <div ref="indicator" class="indicator"></div>
+    <div ref="indicator" class="indicator">{{-val}} %</div>
 </template>
 
 <script>
@@ -8,7 +8,7 @@ export default {
     data(){
         return{
             raf : undefined,
-            initPos : -100
+            val : 0
         }
     },
     mounted(){
@@ -19,8 +19,8 @@ export default {
     },
     methods:{
         scrollIndic(){
-            const heightDocument = this.initPos - window.pageYOffset / (window.innerHeight - document.documentElement.scrollHeight) * 100
-            this.$refs.indicator.style.transform = "translate3d(0,"+heightDocument+"%, 0)"
+            const heightDocument = window.pageYOffset / (window.innerHeight - document.documentElement.scrollHeight) * 100
+            this.val = Math.floor(heightDocument)
             this.raf = requestAnimationFrame(this.scrollIndic)
         }
     }
@@ -30,11 +30,10 @@ export default {
 <style lang="scss">
     .indicator{
         position: fixed;
-        top: 0;
-        height: 100vh;
-        width: 5px;
-        right: 0;
-        background-color: #F92E2D;
+        bottom: 7%;
+        left: 5%;
         z-index: 1;
+        font-family: "Poppins";
+        font-size: 0.9rem;
     }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-x">
+  <div class="content overflow-x">
     <Header />
     <Indicator />
     <section class="hero-about">
@@ -23,7 +23,7 @@
         <div class="bio__content">
         <h2 v-animate-parallax:[directionY]="4" data-v="0.25" class="bio__title">Ma bio</h2>
         <p class="bio__paragraph">
-          Front-end developpeur junior et web designer de 23 ans fraichement diplomé d'un bachelier en haute école depuis septembre 2022 avec une mention distinction.
+          Front-end developpeur et web designer de 23 ans diplomé d'un bachelier en haute école depuis septembre 2022 avec une mention distinction.
           Principalement orienté front-end, j'ai de bonnes connaissances dans les technologies modernes du web comme Vue.js / Nuxt.js ainsi que le CMS Wordpress.
         </p>
         </div>
