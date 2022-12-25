@@ -1,12 +1,11 @@
 <template>
   <div class="content overflow-x">
     <Header />
-    <Indicator />
     <section class="hero-about">
       <CutTitle
         classNameTitle="hero-about__title title-primary"
         classNameSpan="hero-about__span"
-        value="Sykovaris Dimitrios  developpeur  designer"
+        value="Sykovaris Dimitrios  Bruxelles  Saint-Gilles"
         data_left="-0.2"
         data_right="0.2"
       />
@@ -108,8 +107,7 @@ export default {
   data() {
     return {
       directionX: "translateX",
-      directionY: "translateY",
-      svgAnim : undefined
+      directionY: "translateY"
     };
   },
   asyncData({ params }) {

@@ -9,11 +9,6 @@
 <script>
 export default {
     name : "btnDown",
-    data(){
-        return{
-            interval : undefined,
-        }
-    },
     mounted(){
       window.addEventListener('wheel', this.clearAnim)
       window.addEventListener('touchmove', this.clearAnim)

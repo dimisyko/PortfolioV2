@@ -1,7 +1,6 @@
 <template>
   <div class="content">
     <Header />
-    <Indicator />
     <nuxt-link to="/works" class="btn-back">Retour</nuxt-link>
     <section class="hero-flexi">
       <div class="hero-flexi__content">
@@ -134,8 +133,7 @@ export default {
       y: 0,
       posX: 0,
       posY: 0,
-      ease: 15,
-      raf: undefined,
+      ease: 15
     };
   },
   asyncData({ params }) {
