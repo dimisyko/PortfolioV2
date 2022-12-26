@@ -364,13 +364,18 @@ export default {
   &__img {
     position: absolute;
     top: 0;
-    width: 28%;
-    height: 30vw;
+    width: 50%;
+    height: 55vw;
+    padding: 10px;
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
     transition: clip-path 0.7s 0.1s ease;
     pointer-events: none;
-    padding: 15px;
     background-color: white;
+    @include tablet{
+      width: 28%;
+      height: 30vw;
+      padding: 15px;
+    }
   }
 }
 </style>
