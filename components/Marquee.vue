@@ -20,6 +20,7 @@ export default {
   border: 1px solid #F92E2D;
   border-radius: 50vw;
   padding: 1.7rem 0;
+  transition: 0.4s ease;
   &:hover{
      color: transparent;
       -webkit-text-stroke: 1.5px red;

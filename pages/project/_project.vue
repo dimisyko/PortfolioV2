@@ -12,13 +12,13 @@
           {{ project.titleProject }}
           <span class="nbr-title">({{ number_project + 1}})</span>
         </h1>
-        <picture class="hero-flexi__img">
+        <figure class="hero-flexi__img">
           <nuxt-img
             :src="project.imgProject"
             sizes="sm:70vw md:100vw lg:100vw"
             :alt="project.titleProject"
           />
-        </picture>
+        </figure>
       </div>
       <BtnDown />
     </section>
@@ -74,7 +74,7 @@
       </div>
       <div class="container-imgs" ref="containerImg">
         <div class="list-imgs hide" ref="imgsList">
-          <picture
+          <figure
             class="list-imgs__project"
             v-for="(list, i) in project.detailMain"
             :key="i"
@@ -85,7 +85,7 @@
               format="webp"
               :alt="list.altListImg"
             />
-          </picture>
+          </figure>
         </div>
       </div>
       <section class="next-project w-90">
@@ -102,7 +102,7 @@
               "
             />
           </nuxt-link>
-          <picture class="next-project__img" ref="img">
+          <figure class="next-project__img" ref="img">
             <nuxt-img
               :src="
                 data.projectsPage[nextProject(number_project + 1)].imgProject
@@ -112,7 +112,7 @@
                 data.projectsPage[nextProject(number_project + 1)].titleProject
               "
             />
-          </picture>
+          </figure>
         </div>
       </section>
     </main>
@@ -198,7 +198,7 @@ export default {
   z-index: 9;
   font-size: 2rem;
   letter-spacing: 0.08rem;
-  @include lineAfter(2px, transform 0.7s cubic-bezier(0.87, 0, 0.12, 1));
+  @include lineAfter(2px, transform 0.5s);
   @include phone {
     top: 5%;
   }

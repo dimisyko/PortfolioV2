@@ -2,18 +2,18 @@
   <div class="content">
     <Header />
       <main class="site-main container-height" ref="containerHeight">
-        <div class="container-project hide" ref="container">
+        <section class="container-project hide" ref="container">
           <h1 class="container-project__title">Mes travaux réalisés de 2020 - 2022</h1>
-      <section class="project" v-for="(project, index) in works.projectsPage" :key="index">
+      <article class="project" v-for="(project, index) in works.projectsPage" :key="index">
         <nuxt-link 
         :class="`project__link ${index % 2 === 0 ? `odd` : `even`}`" :to="`project/${project.url}`">
           <h2 :data-txt="project.titleProject" class="project__title">{{project.titleProject}}</h2>
-          <picture class="project__img">
-            <nuxt-img :src="project.imgProject" :alt="project.titleProject"/>
-          </picture>    
+          <figure class="project__img">
+            <nuxt-img :src="project.imgProject" sizes="sm:100vw lg:100vw" :alt="project.titleProject"/>
+          </figure>    
         </nuxt-link>
-      </section>
-        </div>
+      </article>
+        </section>
       </main>
   </div>
 </template>

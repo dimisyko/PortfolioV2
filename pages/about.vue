@@ -57,24 +57,24 @@
         <h2 class="internship__title">Stage chez Atelier Design</h2>
         <div class="internship__container">
           <div class="internship__flex">
-            <picture v-animate-parallax:[directionY]="4" data-v="0.15" class="internship__img hide">
+            <figure v-animate-parallax:[directionY]="4" data-v="0.15" class="internship__img hide">
               <nuxt-img
                 src="/about/ad.webp"
                 sizes="sm:100vw lg:100vw"
                 alt="Atelier Design"
               />
-            </picture>
+            </figure>
             <p class="internship__paragraph">
               Dans le cadre de ma 3eme année, j’ai effectué un stage d’une durée de quinze semaines au sein de l’agence Atelier design en tant que développeur web. Il m'a permis d'approfondire mes connaissances dans le CMS Wordpress et le language Javascript.
             </p>
           </div>
-          <picture class="internship__img hide">
+          <figure class="internship__img hide">
             <nuxt-img
               src="/about/atelier_design.webp"
               sizes="sm:100vw lg:100vw"
               alt="Atelier Design2"
             />
-          </picture>
+          </figure>
         </div>
       </section>
       <div class="get-in-touch marquee-title">
