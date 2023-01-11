@@ -1,6 +1,5 @@
 <template>
   <div class="content">
-    <Header />
     <nuxt-link to="/works" class="btn-back">Retour</nuxt-link>
     <section class="hero-flexi">
       <div class="hero-flexi__content">
@@ -88,8 +87,8 @@
           </figure>
         </div>
       </div>
-      <section class="next-project w-90">
-        <div class="next-project__container">
+      <section class="next-project hide">
+        <div class="next-project__container w-90">
           <p>Projet suivant</p>
           <nuxt-link
             @mousemove.native="moveImg($event)"
@@ -345,7 +344,6 @@ export default {
   height: 100vh;
   @extend %centerFlex;
   &__container {
-    width: 100%;
     p {
       text-align: center;
       margin-bottom: 3rem;

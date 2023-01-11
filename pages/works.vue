@@ -1,6 +1,5 @@
 <template>
   <div class="content">
-    <Header />
       <main class="site-main container-height" ref="containerHeight">
         <section class="container-project hide" ref="container">
           <h1 class="container-project__title">Mes travaux réalisés de 2020 - 2022</h1>

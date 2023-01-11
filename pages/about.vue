@@ -1,6 +1,5 @@
 <template>
   <div class="content overflow-x">
-    <Header />
     <section class="hero-about">
       <CutTitle
         classNameTitle="hero-about__title title-primary"
@@ -22,8 +21,8 @@
         <div class="bio__content">
         <h2 v-animate-parallax:[directionY]="4" data-v="0.25" class="bio__title">Ma bio</h2>
         <p class="bio__paragraph">
-          Front-end developpeur et web designer de 23 ans diplomé d'un bachelier en haute école depuis septembre 2022 avec une mention distinction.
-          Principalement orienté front-end, j'ai de bonnes connaissances dans les technologies modernes du web comme Vue.js / Nuxt.js ainsi que le CMS Wordpress.
+          Front-end développeur et web designer de 23 ans diplomé d'un bachelier en haute école depuis septembre 2022 avec une mention distinction.
+          Passionné par le développement créatif, je sais travailler avec des technologies modernes du web comme le framework Vue.js / Nuxt.js ainsi que le CMS Wordpress.
         </p>
         </div>
         <svg ref="svgRotate" class="svg-star" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

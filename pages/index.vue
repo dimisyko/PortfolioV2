@@ -1,6 +1,5 @@
 <template>
   <div class="content overflow">
-    <Header />
     <section class="home w-90">
       <div class="home__txt">
         <h1 class="home__title title-primary">Front-end dev. web designer</h1>
